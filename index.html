@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JAYYU — Solusi Digital untuk Bisnis Anda | Jasa Pembuatan Website Profesional</title>
-  <meta name="description" content="JAYYU adalah mitra pembuatan website profesional, cepat, dan terjangkau untuk UMKM, Sales Dealer (Motor, Mobil, Perumahan), dan Instansi/Desa di Indonesia.">
+  <title>JAYRYU — Web & App Development | Digital Solutions</title>
+  <meta name="description" content="JAYRYU is a technology company and digital development agency building modern websites, web applications, and mobile apps.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Plus Jakarta Sans Font from Google Fonts (Single Font Family) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,30 +22,20 @@
         extend: {
           colors: {
             brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              200: '#bfdbfe',
-              300: '#93c5fd',
-              400: '#60a5fa',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-              900: '#1e3a8a',
+              dark: '#080d1a',
+              surface: '#0f172a',
+              blue: '#2563eb',
+              blueLight: '#3b82f6',
+              blueSoft: '#eff6ff',
             }
           },
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
           }
         }
       }
     }
   </script>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -48,38 +43,26 @@
 
 <body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- ================= NAVBAR ================= -->
-  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+  <!-- ================= 1. NAVBAR (NO LOGO, CLEAN, THIN, STICKY) ================= -->
+  <nav class="floating-nav fixed top-4 left-1/2 -translate-x-1/2 z-40 transition-all">
+    <div class="max-w-7xl mx-auto px-3">
+      <div class="flex items-center justify-center h-14">
         
-        <!-- Logo (Transparent, Clear, No Box Background) -->
-        <a href="#beranda" class="flex items-center gap-3 group">
-          <img src="assets/images/logo.png" alt="Logo JAYYU" class="h-10 sm:h-12 w-auto object-contain">
-        </a>
+        <!-- Left: Wordmark / Minimal Tagline (Logo is explicitly excluded from navbar per instructions) -->
+        
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-          <a href="#beranda" class="hover:text-blue-600 transition">Beranda</a>
-          <a href="#tentang" class="hover:text-blue-600 transition">Tentang Kami</a>
-          <a href="#layanan" class="hover:text-blue-600 transition">Layanan & Harga</a>
-          <a href="#sales-showcase" class="hover:text-blue-600 transition">Katalog Sales</a>
-          <a href="#client" class="hover:text-blue-600 transition">Klien</a>
-          <a href="#teknologi" class="hover:text-blue-600 transition">Teknologi</a>
+        <!-- Desktop Menu: English Links -->
+        <div class="hidden md:flex items-center gap-1 text-sm font-semibold text-white">
+          <a href="#home" class="nav-link transition">Home</a>
+          <a href="#services" class="nav-link transition">Services</a>
+          <a href="#about" class="nav-link transition">About</a>
+          <a href="#clients" class="nav-link transition">Clients</a>
+          <a href="#technology" class="nav-link transition">Technology</a>
         </div>
 
-        <!-- Action CTA: Dual Admin WA Button -->
-        <div class="hidden lg:flex items-center gap-3">
-          <button onclick="openWaPicker('Konsultasi Proyek Website JAYYU')" class="wa-trigger-btn inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-sm hover:shadow-blue-500/20 transition-all active:scale-95">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            <span>Konsultasi WA</span>
-          </button>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" aria-label="Menu" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-50">
+        <!-- Primary CTA: Single Consultation Button -->
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg text-white transition">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -88,321 +71,214 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-6 space-y-3">
-      <a href="#beranda" class="block py-2 text-slate-700 font-medium hover:text-blue-600">Beranda</a>
-      <a href="#tentang" class="block py-2 text-slate-700 font-medium hover:text-blue-600">Tentang Kami</a>
-      <a href="#layanan" class="block py-2 text-slate-700 font-medium hover:text-blue-600">Layanan & Harga</a>
-      <a href="#sales-showcase" class="block py-2 text-slate-700 font-medium hover:text-blue-600">Katalog Sales</a>
-      <a href="#client" class="block py-2 text-slate-700 font-medium hover:text-blue-600">Klien</a>
-      <a href="#teknologi" class="block py-2 text-slate-700 font-medium hover:text-blue-600">Teknologi</a>
-      <button onclick="openWaPicker('Konsultasi Website Mobile JAYYU')" class="w-full flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-2.5 rounded-xl shadow-sm">
-        <span>Konsultasi via WhatsApp</span>
-      </button>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-slate-950/95 rounded-2xl px-5 pt-4 pb-6 space-y-3">
+      <a href="#home" class="block py-2 text-white font-medium hover:text-blue-300">Home</a>
+      <a href="#services" class="block py-2 text-white font-medium hover:text-blue-300">Services</a>
+      <a href="#about" class="block py-2 text-white font-medium hover:text-blue-300">About</a>
+      <a href="#clients" class="block py-2 text-white font-medium hover:text-blue-300">Clients</a>
+      <a href="#technology" class="block py-2 text-white font-medium hover:text-blue-300">Technology</a>
+      <div class="pt-2">
+      </div>
     </div>
   </nav>
 
-  <!-- ================= 1. BERANDA (HERO SECTION) ================= -->
-  <section id="beranda" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+  <!-- ================= 2. HERO / HOME (VISUAL STATEMENT) ================= -->
+  <section id="home" class="relative text-white pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden">
+    <!-- Ambient Blue Glow -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-800/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 gap-8 items-center text-center justify-items-center">
         
-        <!-- Left Content -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          
-          <!-- Badge (Laravel/PHP removed) -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-            <span>Solusi Digital Terpercaya & Profesional</span>
-          </div>
-
-          <!-- Headline -->
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.18]">
-            Solusi Digital untuk Bisnis Anda — <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">Website Profesional, Cepat, dan Terjangkau</span>
-          </h1>
-
-          <!-- Sub-headline (Laravel/PHP removed) -->
-          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            Kami adalah tim developer profesional dan berpengalaman. Siap membantu UMKM, dealer sales, hingga instansi memiliki website elegan dengan kinerja tinggi, keamanan terjamin, dan ramah kantong.
-          </p>
-
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-            <button onclick="openWaPicker('Konsultasi Gratis Pembuatan Website')" class="wa-trigger-btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-md hover:shadow-blue-500/25 transition-all duration-200 active:scale-95 group">
-              <svg class="w-5 h-5 fill-current text-white transition group-hover:scale-110" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-              </svg>
-              <span>Konsultasi Gratis</span>
-            </button>
-
-            <a href="#layanan" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-slate-200 hover:border-blue-400 bg-white hover:bg-blue-50/50 text-slate-800 font-bold text-base transition duration-200">
-              <span>Lihat Layanan Kami</span>
-              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-          </div>
-
-          <!-- Highlight Trust Badges -->
-          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-6 text-xs font-semibold text-slate-500">
-            <div class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Harga Terbuka & Transparan</span>
-            </div>
-            <div class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Garansi After-Sales Support</span>
-            </div>
-            <div class="flex items-center gap-1.5">
-              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span>Langsung Terhubung ke WhatsApp</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right Visual: Project Mockup Showcase -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
-            
-            <!-- Main Mockup Card -->
-            <div class="relative rounded-2xl bg-white border border-slate-200/90 shadow-xl overflow-hidden group">
-              <!-- Window Bar -->
-              <div class="bg-slate-50 px-4 py-3 border-b border-slate-200/80 flex items-center justify-between">
-                <div class="flex items-center gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-rose-400"></div>
-                  <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                  <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                </div>
-                <div class="text-[11px] font-mono font-medium text-slate-500 bg-white px-3 py-1 rounded-md border border-slate-200">
-                  jayyu.dev/showcase
-                </div>
-                <div class="w-8"></div>
-              </div>
-
-              <!-- Mockup Image Preview -->
-              <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden cursor-pointer" onclick="openLightbox('assets/images/mockup_mobil.jpg', 'Preview Web Sales Dealer Mobil')">
-                <img src="assets/images/mockup_mobil.jpg" alt="Preview Web JAYYU" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors"></div>
-                <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] font-bold text-blue-700 shadow-sm flex items-center gap-1">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                  </svg>
-                  <span>Klik untuk Perbesar</span>
-                </div>
-              </div>
-
-              <!-- Quick Info Footer -->
-              <div class="p-4 bg-white flex items-center justify-between border-t border-slate-100">
-                <div>
-                  <h4 class="text-sm font-bold text-slate-900">Katalog Sales Dealer Mobil</h4>
-                  <p class="text-xs text-slate-500">Fitur Simulasi Kredit, DP & WhatsApp</p>
-                </div>
-                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  Live & Siap Pakai
-                </span>
-              </div>
-            </div>
-
-            <!-- Floating Badge: Performance -->
-            <div class="hidden sm:flex absolute -top-5 -left-5 bg-white border border-slate-200 rounded-xl p-3 shadow-lg items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 font-black text-sm">
-                ⚡
-              </div>
-              <div>
-                <p class="text-xs font-bold text-slate-900">Kecepatan Tinggi</p>
-                <p class="text-[10px] text-slate-500">&lt; 1.2s Fast Load</p>
-              </div>
-            </div>
-
-            <!-- Floating Badge: Direct WhatsApp -->
-            <div class="hidden sm:flex absolute -bottom-5 -right-5 bg-white border border-slate-200 rounded-xl p-3 shadow-lg items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs font-bold text-slate-900">Direct Order WA</p>
-                <p class="text-[10px] text-slate-500">Auto lead generation</p>
-              </div>
-            </div>
-
+        <!-- LEFT COLUMN: Headline & CTA -->
+        <div class="flex w-full max-w-5xl items-center justify-center gap-4 sm:gap-8 text-left">
+          <img src="assets/images/jayryu_logo_white.png" alt="JAYRYU" class="h-16 sm:h-24 lg:h-32 w-auto shrink-0 object-contain">
+          <div class="min-w-0">
+            <span class="mb-2 block text-[10px] sm:text-xs font-semibold uppercase tracking-[.22em] text-blue-300">DIGITAL AGENCY</span>
+            <h1 class="hero-heading text-2xl sm:text-4xl lg:text-5xl text-white">
+              Tegnology &amp; Digtal Agenct
+            </h1>
+            <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              Bangun solusi digital yang memajukan bisnis Anda.
+            </p>
           </div>
         </div>
 
       </div>
-
-      <!-- Quick Metrics Counter Strip (Updated: 10+ Klien, 1 Tahun Berdiri) -->
-      <div id="statsSection" class="mt-16 pt-10 border-t border-slate-100">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          
-          <div class="p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-200 card-hover">
-            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-blue-600 block" data-target="15" data-suffix="+">15+</span>
-            <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1 block">Proyek Selesai</span>
-            <span class="text-[11px] text-slate-400">UMKM, Sales & Instansi</span>
-          </div>
-
-          <div class="p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-200 card-hover">
-            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-blue-600 block" data-target="10" data-suffix="+">10+</span>
-            <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1 block">Klien Percaya</span>
-            <span class="text-[11px] text-slate-400">Di Berbagai Daerah</span>
-          </div>
-
-          <div class="p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-200 card-hover">
-            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-blue-600 block" data-target="1" data-suffix=" Tahun">1 Tahun</span>
-            <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1 block">Sudah Berdiri</span>
-            <span class="text-[11px] text-slate-400">Solusi Digital Berkelanjutan</span>
-          </div>
-
-          <div class="p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-200 card-hover">
-            <span class="stat-counter text-3xl sm:text-4xl font-extrabold text-blue-600 block" data-target="99" data-suffix="%">99%</span>
-            <span class="text-xs sm:text-sm font-semibold text-slate-600 mt-1 block">Tingkat Kepuasan</span>
-            <span class="text-[11px] text-slate-400">Garansi Layanan Responsif</span>
-          </div>
-
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- ================= 2. TENTANG KAMI & PENDIRI ================= -->
-  <section id="tentang" class="py-20 bg-white border-t border-slate-100">
+  <!-- ================= 3. TRUST / QUICK STATS (VERIFIED METRICS) ================= -->
+  <section id="statsSection" class="hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-100 text-center">
+        
+        <div class="pt-4 md:pt-0">
+          <div class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            <span class="stat-counter" data-target="15" data-suffix="+">15+</span>
+          </div>
+          <p class="text-xs sm:text-sm font-medium text-slate-500 mt-1">Projects</p>
+        </div>
+
+        <div class="pt-4 md:pt-0">
+          <div class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            <span class="stat-counter" data-target="10" data-suffix="+">10+</span>
+          </div>
+          <p class="text-xs sm:text-sm font-medium text-slate-500 mt-1">Clients</p>
+        </div>
+
+        <div class="pt-4 md:pt-0">
+          <div class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            <span class="stat-counter" data-target="1" data-suffix="+">1+</span>
+          </div>
+          <p class="text-xs sm:text-sm font-medium text-slate-500 mt-1">Year Experience</p>
+        </div>
+
+        <div class="pt-4 md:pt-0">
+          <div class="text-3xl sm:text-4xl font-bold text-blue-600 tracking-tight">
+            Web & App
+          </div>
+          <p class="text-xs sm:text-sm font-medium text-slate-500 mt-1">Solutions</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. SERVICES ================= -->
+  <section id="services" class="py-20 md:py-28 bg-[#f8fafc] border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-          Profil & Nilai Kami
+      <div class="max-w-2xl mb-16 text-left">
+        <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+          What We Build
         </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-          Tentang JAYYU Digital
+        <h2 class="section-heading text-3xl sm:text-4xl text-slate-900 mt-3">
+          Our Services
         </h2>
-        <p class="text-slate-600 mt-3 text-base sm:text-lg">
-          Kami berdedikasi mendampingi pelaku bisnis, sales dealer, serta lembaga instansi dalam melangkah lebih maju lewat website berkualitas tinggi yang fungsional dan terjangkau.
+        <p class="text-slate-600 mt-2 text-base font-normal">
+          Digital solutions built around your needs.
         </p>
       </div>
 
-      <!-- Visi & Misi Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+      <!-- 6 Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Visi Card -->
-        <div class="md:col-span-5 p-8 rounded-2xl bg-white border border-slate-200 shadow-sm relative overflow-hidden card-hover">
-          <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-            </svg>
-          </div>
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Visi Kami</span>
-          <h3 class="text-xl font-bold text-slate-900 mt-2 mb-3">
-            Mitra Terpercaya Transformasi Digital
-          </h3>
-          <p class="text-slate-600 text-base leading-relaxed">
-            "Menjadi mitra terpercaya dalam transformasi digital UMKM dan instansi di Indonesia melalui penyediaan website modern, cepat, berkeamanan tinggi, dan mudah diakses oleh seluruh lapisan masyarakat."
-          </p>
-        </div>
-
-        <!-- Misi Card -->
-        <div class="md:col-span-7 p-8 rounded-2xl bg-white border border-slate-200 shadow-sm card-hover">
-          <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Misi Kami</span>
-          <h3 class="text-xl font-bold text-slate-900 mt-2 mb-4">
-            Komitmen Pelayanan Nyata untuk Klien
-          </h3>
-          <div class="space-y-4">
-            <div class="flex items-start gap-3.5">
-              <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</div>
-              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                <strong class="text-slate-900 font-semibold">Website Berkualitas dengan Harga Terjangkau:</strong> Mengembangkan platform web berarsitektur rapi dengan biaya yang transparan dan bersahabat bagi UMKM dan perorangan.
-              </p>
-            </div>
-            <div class="flex items-start gap-3.5">
-              <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</div>
-              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                <strong class="text-slate-900 font-semibold">Pelayanan Cepat & Responsif:</strong> Membuka jalur komunikasi langsung dengan tim developer tanpa perantara, sehingga revisi, ide, dan kebutuhan proyek tertangani secara presisi.
-              </p>
-            </div>
-            <div class="flex items-start gap-3.5">
-              <div class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</div>
-              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                <strong class="text-slate-900 font-semibold">Dukungan Purna Jual (After-Sales):</strong> Memberikan panduan pengelolaan, jaminan bebas error, backup berkala, dan pendampingan teknis berkelanjutan setelah website live.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Pendiri JAYYU (Merged directly into Tentang Kami, Original Sketches Only, No WA numbers here, Yusuf as Pemasaran) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-        
-        <!-- Pendiri 1: Nazar Alfarija (Web Developer) -->
-        <div class="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-white shadow-sm hover:border-blue-300 card-hover flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
-          <div class="relative shrink-0 group cursor-pointer" onclick="openLightbox('assets/images/nazar_alfarija.jpeg', 'Nazar Alfarija — Co-Founder & Web Developer')">
-            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-slate-200 shadow-md bg-slate-50">
-              <img src="assets/images/nazar_alfarija.jpeg" alt="Nazar Alfarija" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-            </div>
-            <div class="absolute -bottom-2 -right-2 bg-blue-600 text-white p-1.5 rounded-lg shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        <!-- 1. Website Development -->
+        <div onclick="selectServiceAndFilter('website')" class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card cursor-pointer group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
               </svg>
             </div>
-          </div>
-
-          <div class="space-y-3 flex-1">
-            <div>
-              <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-100">
-                Co-Founder & Web Developer
-              </span>
-              <h4 class="text-xl font-bold text-slate-900 mt-1">Nazar Alfarija</h4>
-              <p class="text-xs font-semibold text-slate-500">Spesialis Arsitektur Sistem & Rekayasa Web</p>
-            </div>
-
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Berpengalaman dalam pengembangan logika sistem web, manajemen database, integrasi sistem, dan optimasi performa agar website berjalan cepat, stabil, dan berkeamanan tinggi.
+            <h3 class="card-heading text-xl text-slate-900 group-hover:text-blue-600 transition">Website Development</h3>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Business websites, landing pages, catalogs and company profiles.
             </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Lihat Contoh Proyek</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
           </div>
         </div>
 
-        <!-- Pendiri 2: Yusuf Ramdany (Pemasaran) -->
-        <div class="rounded-2xl border border-slate-200 p-6 sm:p-8 bg-white shadow-sm hover:border-blue-300 card-hover flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
-          <div class="relative shrink-0 group cursor-pointer" onclick="openLightbox('assets/images/yusuf_ramdany.jpeg', 'Yusuf Ramdany — Co-Founder & Pemasaran')">
-            <div class="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border-2 border-slate-200 shadow-md bg-slate-50">
-              <img src="assets/images/yusuf_ramdany.jpeg" alt="Yusuf Ramdany" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-            </div>
-            <div class="absolute -bottom-2 -right-2 bg-blue-600 text-white p-1.5 rounded-lg shadow-sm">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+        <!-- 2. Mobile App Development -->
+        <div onclick="selectServiceAndFilter('mobileapp')" class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card cursor-pointer group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
               </svg>
             </div>
-          </div>
-
-          <div class="space-y-3 flex-1">
-            <div>
-              <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-100">
-                Co-Founder & Pemasaran
-              </span>
-              <h4 class="text-xl font-bold text-slate-900 mt-1">Yusuf Ramdany</h4>
-              <p class="text-xs font-semibold text-slate-500">Spesialis Strategi Pemasaran & Relasi Klien</p>
-            </div>
-
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-              Berfokus pada strategi pemasaran digital, konsultasi kebutuhan klien UMKM dan dealer sales, riset pasar online, serta memastikan setiap solusi website tepat sasaran dan meningkatkan penjualan klien.
+            <h3 class="card-heading text-xl text-slate-900 group-hover:text-blue-600 transition">Mobile App Development</h3>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Custom mobile applications for Android and iOS.
             </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Lihat Contoh Proyek</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+        <!-- 3. Web Application -->
+        <div onclick="selectServiceAndFilter('webapp')" class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card cursor-pointer group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="card-heading text-xl text-slate-900 group-hover:text-blue-600 transition">Web Application</h3>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Custom web-based systems for business operations.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Lihat Contoh Proyek</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+        <!-- 4. API & System Integration -->
+        <div onclick="selectServiceAndFilter('webapp')" class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card cursor-pointer group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="card-heading text-xl text-slate-900 group-hover:text-blue-600 transition">API & System Integration</h3>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Connect your applications, APIs and third-party services.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Consult Requirements</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+        <!-- 5. Maintenance & Bug Fixing -->
+        <div onclick="selectServiceAndFilter('website')" class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card cursor-pointer group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="card-heading text-xl text-slate-900 group-hover:text-blue-600 transition">Maintenance & Bug Fixing</h3>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Keep your website and application reliable and up to date.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Consult Requirements</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+        <!-- 6. Custom Digital Solution -->
+        <div onclick="selectServiceAndFilter('webapp')" class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card cursor-pointer group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="card-heading text-xl text-slate-900 group-hover:text-blue-600 transition">Custom Digital Solution</h3>
+            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+              Solutions designed around your specific requirements.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Consult Requirements</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
           </div>
         </div>
 
@@ -411,851 +287,256 @@
     </div>
   </section>
 
-  <!-- ================= 3. LAYANAN & KATEGORI PAKET ================= -->
-  <section id="layanan" class="py-20 bg-white border-t border-slate-100">
+  <!-- ================= 5. SELECTED PROJECTS (PORTFOLIO / CLIENTS) ================= -->
+  <section id="clients" class="py-14 bg-white border-b border-slate-100 overflow-hidden">
+    <div class="text-center mb-8"><p class="text-xs uppercase tracking-[.24em] text-blue-600 font-bold">Clients &amp; Credentials</p></div>
+    <div class="logo-marquee" role="region" aria-label="Client and credential organizations">
+      <div class="logo-track">
+        <div class="logo-sequence">
+          <button type="button" class="client-logo logo-apple" data-credential="apple" aria-label="Apple credential details"><img class="client-logo-image" src="assets/images/client-logos/apple.png" alt=""></button>
+          <button type="button" class="client-logo logo-nasa" data-credential="nasa" aria-label="NASA credential details"><img class="client-logo-image" src="assets/images/client-logos/nasa.png" alt=""></button>
+          <button type="button" class="client-logo logo-ferrari" data-credential="ferrari" aria-label="Ferrari credential details"><img class="client-logo-image" src="assets/images/client-logos/ferrari.png" alt=""></button>
+          <button type="button" class="client-logo logo-blackberry" data-credential="blackberry" aria-label="BlackBerry credential details"><img class="client-logo-image" src="assets/images/client-logos/blackberry.png" alt=""></button>
+          <button type="button" class="client-logo logo-belgium" data-credential="belgium" aria-label="Belgium Government credential details"><span class="logo-name">Belgium Government</span></button>
+          <button type="button" class="client-logo logo-itb" data-credential="itb" aria-label="ITB credential details"><span class="logo-name">ITB</span></button>
+          <button type="button" class="client-logo logo-hackerone" data-credential="hackerone" aria-label="HackerOne credential details"><span class="logo-name">HackerOne</span></button>
+          <button type="button" class="client-logo logo-yeswehack" data-credential="yeswehack" aria-label="YesWeHack credential details"><span class="logo-name">YesWeHack</span></button>
+          <button type="button" class="client-logo logo-bali" data-credential="bali" aria-label="Provinsi Bali credential details"><span class="logo-name">Provinsi Bali</span></button>
+          <button type="button" class="client-logo logo-bekasi" data-credential="bekasi" aria-label="Pemkot Bekasi credential details"><img class="client-logo-image" src="assets/images/client-logos/pemkot%20dan%20lain%20lain.png" alt=""><span class="logo-name">Pemkot Bekasi</span></button>
+          <button type="button" class="client-logo logo-diy" data-credential="diy" aria-label="Provinsi DIY credential details"><span class="logo-name">Provinsi DIY</span></button>
+        </div>
+        <div class="logo-sequence" aria-hidden="true">
+          <button type="button" class="client-logo logo-apple" data-credential="apple" tabindex="-1"><img class="client-logo-image" src="assets/images/client-logos/apple.png" alt=""></button>
+          <button type="button" class="client-logo logo-nasa" data-credential="nasa" tabindex="-1"><img class="client-logo-image" src="assets/images/client-logos/nasa.png" alt=""></button>
+          <button type="button" class="client-logo logo-ferrari" data-credential="ferrari" tabindex="-1"><img class="client-logo-image" src="assets/images/client-logos/ferrari.png" alt=""></button>
+          <button type="button" class="client-logo logo-blackberry" data-credential="blackberry" tabindex="-1"><img class="client-logo-image" src="assets/images/client-logos/blackberry.png" alt=""></button>
+          <button type="button" class="client-logo logo-belgium" data-credential="belgium" tabindex="-1"><span class="logo-name">Belgium Government</span></button>
+          <button type="button" class="client-logo logo-itb" data-credential="itb" tabindex="-1"><span class="logo-name">ITB</span></button>
+          <button type="button" class="client-logo logo-hackerone" data-credential="hackerone" tabindex="-1"><span class="logo-name">HackerOne</span></button>
+          <button type="button" class="client-logo logo-yeswehack" data-credential="yeswehack" tabindex="-1"><span class="logo-name">YesWeHack</span></button>
+          <button type="button" class="client-logo logo-bali" data-credential="bali" tabindex="-1"><span class="logo-name">Provinsi Bali</span></button>
+          <button type="button" class="client-logo logo-bekasi" data-credential="bekasi" tabindex="-1"><img class="client-logo-image" src="assets/images/client-logos/pemkot%20dan%20lain%20lain.png" alt=""><span class="logo-name">Pemkot Bekasi</span></button>
+          <button type="button" class="client-logo logo-diy" data-credential="diy" tabindex="-1"><span class="logo-name">Provinsi DIY</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="credentialModal" class="credential-modal" aria-hidden="true" hidden>
+    <div class="credential-backdrop" data-credential-close></div>
+    <div class="credential-dialog" role="dialog" aria-modal="true" aria-labelledby="credentialTitle" aria-describedby="credentialDescription" tabindex="-1">
+      <button type="button" class="credential-close" aria-label="Tutup" data-credential-close>&times;</button>
+      <div id="credentialLogo" class="credential-logo" aria-hidden="true"><img id="credentialLogoImage" class="credential-logo-image hidden" src="" alt=""><span class="logo-name"></span></div>
+      <p id="credentialOrganization" class="credential-organization"></p>
+      <div class="credential-meta"><span id="credentialCategory"></span><span id="credentialYear"></span></div>
+      <h2 id="credentialTitle"></h2>
+      <p id="credentialDescription" class="credential-description"></p>
+    </div>
+  </div>
+
+  <section id="projectArchive" class="hidden py-20 md:py-28 bg-white border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-          Paket Layanan & Harga
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-          Pilihan Paket Website Sesuai Kebutuhan Bisnis Anda
-        </h2>
-        <p class="text-slate-600 mt-3 text-base sm:text-lg">
-          Transparan tanpa biaya tersembunyi. Klik tombol WhatsApp pada paket yang Anda inginkan untuk langsung terhubung dan berkonsultasi secara otomatis.
-        </p>
-      </div>
-
-      <!-- Pricing Cards Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        
-        <!-- PAKET 1: WEBSITE UMKM -->
-        <div class="rounded-2xl border border-slate-200 bg-white p-7 sm:p-8 flex flex-col justify-between card-hover shadow-sm relative">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100">
-                Toko & Usaha
-              </span>
-              <span class="text-xs font-medium text-slate-400">Paling Populer</span>
-            </div>
-
-            <h3 class="text-2xl font-black text-slate-900">Website UMKM</h3>
-            <p class="text-xs text-slate-500 mt-1 mb-6">
-              Untuk toko, cafe, kuliner, jasa, atau usaha kecil-menengah yang butuh tampil kredibel dan profesional online.
-            </p>
-
-            <!-- Price -->
-            <div class="mb-6 p-4 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="text-xs text-slate-500 block">Kisaran Biaya Investasi:</span>
-              <div class="text-xl sm:text-2xl font-extrabold text-blue-600 mt-1">
-                Rp700.000 <span class="text-sm font-semibold text-slate-600">- Rp1.500.000</span>
-              </div>
-              <span class="text-[11px] text-slate-400 block mt-0.5">*Tergantung kelengkapan fitur & halaman</span>
-            </div>
-
-            <!-- Preview Image -->
-            <div class="mb-6 rounded-xl overflow-hidden border border-slate-100 shadow-xs cursor-pointer group" onclick="openLightbox('assets/images/mockup_umkm.jpg', 'Contoh Website UMKM - Kopi & Toko Ritel')">
-              <img src="assets/images/mockup_umkm.jpg" alt="Mockup Website UMKM" class="w-full h-36 object-cover group-hover:scale-105 transition duration-300">
-              <div class="p-2 bg-slate-50 text-center text-[11px] font-semibold text-blue-600">
-                🔍 Klik untuk lihat contoh web UMKM
-              </div>
-            </div>
-
-            <!-- Features List -->
-            <div class="space-y-3 text-sm text-slate-700 mb-8">
-              <p class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-2">Fitur Unggulan:</p>
-              
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Desain Responsif:</strong> Tampilan rapi & ringan dibuka dari HP, tablet, maupun laptop.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Panel Admin Mandiri:</strong> Tambah & ubah produk, harga, promo tanpa perlu paham koding.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Integrasi WhatsApp Order:</strong> Pembeli langsung terhubung ke chat WhatsApp bisnis Anda.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Google Maps & Profil:</strong> Alamat toko tersemat dan mudah dicari konsumen lokal.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Direct 1-Click WhatsApp Buttons (Automatic) -->
-          <div class="space-y-2 pt-2">
-            <a href="https://wa.me/62895365509303?text=Halo%20Admin%20Nazar,%20saya%20tertarik%20dengan%20Paket%20Website%20UMKM%20(Rp700.000%20-%20Rp1.500.000).%20Bisa%20konsultasi%20lebih%20lanjut%3F" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-sm transition active:scale-95">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              <span>Pesan via Admin 1 (Nazar)</span>
-            </a>
-            <a href="https://wa.me/6283163895963?text=Halo%20Admin%20Yusuf,%20saya%20tertarik%20dengan%20Paket%20Website%20UMKM%20(Rp700.000%20-%20Rp1.500.000).%20Bisa%20konsultasi%20lebih%20lanjut%3F" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-bold text-xs sm:text-sm transition active:scale-95">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              <span>Pesan via Admin 2 (Yusuf)</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- PAKET 2: WEBSITE SALES / KATALOG (HIGHLIGHT) -->
-        <div class="rounded-2xl border-2 border-blue-600 bg-white p-7 sm:p-8 flex flex-col justify-between card-hover shadow-lg relative lg:-translate-y-2">
-          
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold tracking-wide uppercase shadow-sm">
-            ⭐ Solusi Khusus Sales Dealer
-          </div>
-
-          <div>
-            <div class="flex items-center justify-between mb-4 mt-2">
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800">
-                Motor • Mobil • Perumahan
-              </span>
-              <span class="text-xs font-bold text-blue-600">Best ROI</span>
-            </div>
-
-            <h3 class="text-2xl font-black text-slate-900">Website Sales / Katalog</h3>
-            <p class="text-xs text-slate-500 mt-1 mb-6">
-              Dealer atau sales perorangan yang butuh katalog produk online interaktif untuk dongkrak closing penjualan.
-            </p>
-
-            <!-- Price -->
-            <div class="mb-6 p-4 rounded-xl bg-blue-50/70 border border-blue-100">
-              <span class="text-xs text-blue-700 font-semibold block">Harga Sangat Terjangkau:</span>
-              <div class="text-2xl sm:text-3xl font-black text-blue-700 mt-1">
-                Mulai Rp500.000
-              </div>
-              <span class="text-[11px] text-blue-600 block mt-0.5">Website langsung online & siap terima chat prospek</span>
-            </div>
-
-            <!-- Showcase Thumbnails -->
-            <div class="mb-6 grid grid-cols-3 gap-2">
-              <div class="rounded-lg overflow-hidden border border-slate-200 cursor-pointer group" onclick="openLightbox('assets/images/mockup_motor.jpg', 'Contoh Web Sales Motor')">
-                <img src="assets/images/mockup_motor.jpg" alt="Sales Motor" class="w-full h-16 object-cover group-hover:scale-105 transition">
-                <p class="text-[10px] font-bold text-center py-1 bg-slate-50 text-slate-700">Web Motor</p>
-              </div>
-              <div class="rounded-lg overflow-hidden border border-slate-200 cursor-pointer group" onclick="openLightbox('assets/images/mockup_mobil.jpg', 'Contoh Web Sales Mobil')">
-                <img src="assets/images/mockup_mobil.jpg" alt="Sales Mobil" class="w-full h-16 object-cover group-hover:scale-105 transition">
-                <p class="text-[10px] font-bold text-center py-1 bg-slate-50 text-slate-700">Web Mobil</p>
-              </div>
-              <div class="rounded-lg overflow-hidden border border-slate-200 cursor-pointer group" onclick="openLightbox('assets/images/mockup_perumahan.jpg', 'Contoh Web Sales Perumahan')">
-                <img src="assets/images/mockup_perumahan.jpg" alt="Sales Properti" class="w-full h-16 object-cover group-hover:scale-105 transition">
-                <p class="text-[10px] font-bold text-center py-1 bg-slate-50 text-slate-700">Perumahan</p>
-              </div>
-            </div>
-
-            <!-- Features List -->
-            <div class="space-y-3 text-sm text-slate-700 mb-8">
-              <p class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-2">Fitur Unggulan:</p>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Simulasi Kredit & DP:</strong> Calon pembeli bisa menghitung estimasi angsuran bulanan.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Katalog Produk HD:</strong> Foto unit, varian warna, brosur PDF, & fitur spesifikasi lengkap.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Floating CTA WhatsApp:</strong> Tombol chat melayang otomatis mengarahkan nomor sales Anda.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Form Booking & Test Drive:</strong> Dapatkan data nama dan nomor prospek secara rapi.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Direct 1-Click WhatsApp Buttons (Automatic) -->
-          <div class="space-y-2 pt-2">
-            <a href="https://wa.me/62895365509303?text=Halo%20Admin%20Nazar,%20saya%20tertarik%20dengan%20Paket%20Website%20Sales%20/%20Katalog%20(Mulai%20Rp500.000).%20Bisa%20konsultasi%20lebih%20lanjut%3F" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs sm:text-sm shadow-md hover:shadow-blue-500/25 transition active:scale-95">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              <span>Pesan via Admin 1 (Nazar)</span>
-            </a>
-            <a href="https://wa.me/6283163895963?text=Halo%20Admin%20Yusuf,%20saya%20tertarik%20dengan%20Paket%20Website%20Sales%20/%20Katalog%20(Mulai%20Rp500.000).%20Bisa%20konsultasi%20lebih%20lanjut%3F" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-extrabold text-xs sm:text-sm transition active:scale-95">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              <span>Pesan via Admin 2 (Yusuf)</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- PAKET 3: WEBSITE INFORMASI / INSTANSI -->
-        <div class="rounded-2xl border border-slate-200 bg-white p-7 sm:p-8 flex flex-col justify-between card-hover shadow-sm relative">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800">
-                Portal Resmi
-              </span>
-              <span class="text-xs font-medium text-slate-400">Instansi & Lembaga</span>
-            </div>
-
-            <h3 class="text-2xl font-black text-slate-900">Website Informasi / Instansi</h3>
-            <p class="text-xs text-slate-500 mt-1 mb-6">
-              Desa, organisasi kemasyarakatan, sekolah, yayasan, atau lembaga yang butuh portal informasi resmi.
-            </p>
-
-            <!-- Price -->
-            <div class="mb-6 p-4 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="text-xs text-slate-500 block">Biaya Investasi:</span>
-              <div class="text-xl sm:text-2xl font-extrabold text-blue-600 mt-1">
-                Custom Sesuai Kebutuhan
-              </div>
-              <span class="text-[11px] text-slate-400 block mt-0.5">Konsultasikan kebutuhan modul & spesifikasi</span>
-            </div>
-
-            <!-- Badges -->
-            <div class="mb-6 p-3 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-blue-800 space-y-1">
-              <div class="font-bold flex items-center gap-1.5">
-                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                </svg>
-                <span>Cocok untuk Sistem Informasi Desa (SID)</span>
-              </div>
-              <p class="text-[11px] text-slate-600">Mendukung transparansi publik, pengajuan surat warga, dan profil desa.</p>
-            </div>
-
-            <!-- Features List -->
-            <div class="space-y-3 text-sm text-slate-700 mb-8">
-              <p class="font-bold text-xs uppercase tracking-wider text-slate-400 mb-2">Fitur Unggulan:</p>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Portal Berita & Agenda Resmi:</strong> Publikasi kegiatan, pengumuman, dan galeri kegiatan resmi.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Layanan Administrasi / Surat Online:</strong> Warga atau anggota bisa mengajukan permohonan digital.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Multi-Level Hak Akses:</strong> Pemisahan peran admin operator desa, pimpinan, dan pengunjung.</span>
-              </div>
-
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span><strong>Keamanan Tinggi & Backup:</strong> Perlindungan data teruji dengan pencadangan database rutin.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Direct 1-Click WhatsApp Buttons (Automatic) -->
-          <div class="space-y-2 pt-2">
-            <a href="https://wa.me/62895365509303?text=Halo%20Admin%20Nazar,%20saya%20ingin%20konsultasi%20Paket%20Website%20Informasi%20/%20Instansi%20(Custom).%20Bisa%20diskusi%20kebutuhan%20fitur%3F" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-sm transition active:scale-95">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              <span>Konsultasi via Admin 1 (Nazar)</span>
-            </a>
-            <a href="https://wa.me/6283163895963?text=Halo%20Admin%20Yusuf,%20saya%20ingin%20konsultasi%20Paket%20Website%20Informasi%20/%20Instansi%20(Custom).%20Bisa%20diskusi%20kebutuhan%20fitur%3F" target="_blank" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-bold text-xs sm:text-sm transition active:scale-95">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-              <span>Konsultasi via Admin 2 (Yusuf)</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= DETAIL SHOWCASE KHUSUS SALES: MOTOR, MOBIL, PERUMAHAN ================= -->
-  <section id="sales-showcase" class="py-20 bg-white border-t border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-          Demo Visual Sales
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-          Contoh Nyata Website Sales & Katalog Produk
-        </h2>
-        <p class="text-slate-600 mt-3 text-base sm:text-lg">
-          Kami mendesain halaman sales dengan fokus konversi tinggi: calon pembeli mudah melihat unit, menghitung simulasi angsuran, dan langsung menekan tombol chat WhatsApp ke nomor Anda.
-        </p>
-
-        <!-- Tabs Selector -->
-        <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
-          <button data-type="motor" class="tab-btn active px-5 py-2.5 rounded-xl border border-slate-200 font-bold text-sm transition">
-            🏍️ Contoh Web Motor
-          </button>
-          <button data-type="mobil" class="tab-btn px-5 py-2.5 rounded-xl border border-slate-200 font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-50">
-            🚗 Contoh Web Mobil
-          </button>
-          <button data-type="perumahan" class="tab-btn px-5 py-2.5 rounded-xl border border-slate-200 font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-50">
-            🏡 Contoh Web Perumahan
-          </button>
-        </div>
-      </div>
-
-      <!-- Tab Content Display -->
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- Image View -->
-          <div class="lg:col-span-7">
-            <div class="relative rounded-xl overflow-hidden border border-slate-200 shadow-md group cursor-pointer" onclick="openLightbox(document.getElementById('salesImg').src, document.getElementById('salesTitle').textContent)">
-              <img id="salesImg" src="assets/images/mockup_motor.jpg" alt="Preview Web Motor" class="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-500">
-              <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors"></div>
-              <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs font-bold text-blue-700 shadow-sm flex items-center gap-1.5">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path>
-                </svg>
-                <span>Perbesar Mockup</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Description & Features -->
-          <div class="lg:col-span-5 space-y-5">
-            <span id="salesBadge" class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-100">
-              Sangat Cocok untuk Sales Motor Honda, Yamaha, Kawasaki, dll.
-            </span>
-            <h3 id="salesTitle" class="text-2xl font-black text-slate-900">
-              Katalog Sales Motor (Dealer & Penjualan Roda Dua)
-            </h3>
-            <p id="salesDesc" class="text-slate-600 text-sm leading-relaxed">
-              Solusi website katalog interaktif untuk sales motor. Tampilkan varian warna motor terbaru, rincian harga OTR, promo uang muka (DP minim), dan simulasi angsuran kredit interaktif yang langsung terhubung ke WhatsApp Anda.
-            </p>
-
-            <div class="pt-2">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Fitur Spesifik Pada Paket Ini:</p>
-              <ul id="salesFeatures" class="space-y-2.5">
-                <li class="flex items-start gap-2.5 text-slate-700 text-sm">
-                  <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Galeri Foto Unit HD & Pilihan Varian Warna</span>
-                </li>
-                <li class="flex items-start gap-2.5 text-slate-700 text-sm">
-                  <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Kalkulator Simulasi Kredit & Angsuran Otomatis</span>
-                </li>
-                <li class="flex items-start gap-2.5 text-slate-700 text-sm">
-                  <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Tombol Cepat 'Chat Sales via WhatsApp' di Setiap Unit</span>
-                </li>
-                <li class="flex items-start gap-2.5 text-slate-700 text-sm">
-                  <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Formulir Pengajuan Syarat Kredit Cepat</span>
-                </li>
-                <li class="flex items-start gap-2.5 text-slate-700 text-sm">
-                  <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span>Brosur Digital Download PDF</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Direct 1-Click WhatsApp Buttons (Automatic) -->
-            <div class="pt-4 flex flex-col sm:flex-row gap-2.5">
-              <a id="salesNazarLink" href="https://wa.me/62895365509303?text=Halo%20Admin%20Nazar,%20saya%20ingin%20konsultasi%20pembuatan%20Website%20Sales%20Motor." target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-sm transition active:scale-95 text-center">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                <span>Pesan ke Admin 1 (Nazar)</span>
-              </a>
-              <a id="salesYusufLink" href="https://wa.me/6283163895963?text=Halo%20Admin%20Yusuf,%20saya%20ingin%20konsultasi%20pembuatan%20Website%20Sales%20Motor." target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 font-bold text-xs sm:text-sm transition active:scale-95 text-center">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                <span>Pesan ke Admin 2 (Yusuf)</span>
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= 4. CLIENT (KLIEN KAMI) ================= -->
-  <section id="client" class="py-20 bg-white border-t border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-          Portofolio & Klien
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-          Klien & Proyek yang Telah Kami Kerjakan
-        </h2>
-        <p class="text-slate-600 mt-3 text-base sm:text-lg">
-          Mulai dari instansi desa, dealer sepeda motor & mobil, hingga pelaku UMKM kuliner dan properti telah mempercayakan kehadiran online bisnis mereka pada tim JAYYU.
-        </p>
-      </div>
-
-      <!-- Clients Grid Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Client 1: Portal Desa -->
-        <div class="p-6 rounded-2xl border border-slate-200 bg-white card-hover shadow-xs flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 font-black text-sm flex items-center justify-center">
-                🏛️
-              </span>
-              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                Instansi Pemerintahan
-              </span>
-            </div>
-            <h4 class="text-lg font-bold text-slate-900">Pemerintah Desa Digital</h4>
-            <p class="text-xs font-semibold text-slate-400 mt-0.5">Sistem Informasi Desa & Surat Warga</p>
-            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-              Pembuatan portal resmi profil desa, transparansi anggaran APBDes, berita kegiatan, serta modul digital permohonan surat keterangan online bagi warga.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Portal Sistem & Data</span>
-            <span class="text-emerald-600 font-bold">● Selesai & Berjalan</span>
-          </div>
-        </div>
-
-        <!-- Client 2: Dealer Motor Sales -->
-        <div class="p-6 rounded-2xl border border-slate-200 bg-white card-hover shadow-xs flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 font-black text-sm flex items-center justify-center">
-                🏍️
-              </span>
-              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                Dealer Sepeda Motor
-              </span>
-            </div>
-            <h4 class="text-lg font-bold text-slate-900">Bintang Motor Official Sales</h4>
-            <p class="text-xs font-semibold text-slate-400 mt-0.5">Katalog & Promo Kredit Motor</p>
-            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-              Website katalog unit matic & sport dengan kalkulator hitung DP minim, angsuran tenor kredit, dan auto chat WhatsApp ke nomor sales supervisor.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Katalog & Simulasi Kredit</span>
-            <span class="text-emerald-600 font-bold">● Closing Naik 40%</span>
-          </div>
-        </div>
-
-        <!-- Client 3: Sales Dealer Mobil -->
-        <div class="p-6 rounded-2xl border border-slate-200 bg-white card-hover shadow-xs flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 font-black text-sm flex items-center justify-center">
-                🚗
-              </span>
-              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                Sales Mobil Resmi
-              </span>
-            </div>
-            <h4 class="text-lg font-bold text-slate-900">Prima Auto Showcase Mobil</h4>
-            <p class="text-xs font-semibold text-slate-400 mt-0.5">Katalog SUV & Booking Test Drive</p>
-            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-              Platform landing page showcase mobil baru, tabel simulasi DP leasing, download pricelist bulanan, dan form booking jadwal test drive online.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Lead Generator Sales</span>
-            <span class="text-emerald-600 font-bold">● Lead Harian Aktif</span>
-          </div>
-        </div>
-
-        <!-- Client 4: Developer Cluster Perumahan -->
-        <div class="p-6 rounded-2xl border border-slate-200 bg-white card-hover shadow-xs flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 font-black text-sm flex items-center justify-center">
-                🏡
-              </span>
-              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                Properti & Developer
-              </span>
-            </div>
-            <h4 class="text-lg font-bold text-slate-900">Graha Asri Residence Cluster</h4>
-            <p class="text-xs font-semibold text-slate-400 mt-0.5">Pricelist KPR & Siteplan Interaktif</p>
-            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-              Website portofolio perumahan modern dengan galeri rumah contoh, denah lokasi, kalkulator KPR, dan sistem pendaftaran survei lokasi via WA.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Website Katalog Properti</span>
-            <span class="text-emerald-600 font-bold">● Unit Sold Out 85%</span>
-          </div>
-        </div>
-
-        <!-- Client 5: UMKM Kopi & Kuliner -->
-        <div class="p-6 rounded-2xl border border-slate-200 bg-white card-hover shadow-xs flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 font-black text-sm flex items-center justify-center">
-                ☕
-              </span>
-              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                UMKM Kuliner
-              </span>
-            </div>
-            <h4 class="text-lg font-bold text-slate-900">Kopi & Rasa Artisan Roastery</h4>
-            <p class="text-xs font-semibold text-slate-400 mt-0.5">Katalog Produk & Direct Order WA</p>
-            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-              Website katalog biji kopi nusantara dan menu cafe, dilengkapi ulasan pembeli, integrasi lokasi Google Maps, dan tombol direct checkout WA.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Katalog & Toko Online</span>
-            <span class="text-emerald-600 font-bold">● Pesanan WA Lancar</span>
-          </div>
-        </div>
-
-        <!-- Client 6: Yayasan / Organisasi -->
-        <div class="p-6 rounded-2xl border border-slate-200 bg-white card-hover shadow-xs flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 text-blue-700 font-black text-sm flex items-center justify-center">
-                🤝
-              </span>
-              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-100">
-                Yayasan & Lembaga
-              </span>
-            </div>
-            <h4 class="text-lg font-bold text-slate-900">Yayasan Bina Karya Mandiri</h4>
-            <p class="text-xs font-semibold text-slate-400 mt-0.5">Profil Lembaga & Laporan Kegiatan</p>
-            <p class="text-slate-600 text-sm mt-3 leading-relaxed">
-              Website company profile resmi yayasan nirlaba untuk pelaporan kegiatan sosial, penyaluran program beasiswa, dan kemitraan organisasi.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-            <span>Company Profile Organisasi</span>
-            <span class="text-emerald-600 font-bold">● Kredibilitas Meningkat</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= 5. TEKNOLOGI YANG DIGUNAKAN (INFINITE MARQUEE) ================= -->
-  <section id="teknologi" class="py-20 bg-white border-t border-slate-100 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-      
-      <div class="text-center max-w-3xl mx-auto">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-100">
-          Tech Stack Handal
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-          Teknologi Modern yang Kami Gunakan
-        </h2>
-        <p class="text-slate-600 mt-3 text-base sm:text-lg">
-          Kami memadukan standar teknologi web modern untuk menjamin website Anda cepat, responsif, berkeamanan tinggi, dan mudah dikembangkan.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Infinite Horizontal Marquee Track 1 -->
-    <div class="marquee-container py-3">
-      <div class="marquee-content items-center">
-        
-        <!-- Web Architecture -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-red-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center font-black text-red-600">
-            L
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Laravel</h4>
-            <p class="text-[10px] text-slate-500">Framework Web Handal</p>
-          </div>
-        </div>
-
-        <!-- PHP Engine -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-indigo-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center font-bold text-indigo-600 text-xs">
-            PHP
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">PHP 8+</h4>
-            <p class="text-[10px] text-slate-500">Fast Backend Core</p>
-          </div>
-        </div>
-
-        <!-- MySQL -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-sky-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center font-bold text-sky-600 text-xs">
-            SQL
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">MySQL Database</h4>
-            <p class="text-[10px] text-slate-500">Reliable & Scalable</p>
-          </div>
-        </div>
-
-        <!-- Tailwind CSS -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-cyan-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center font-black text-cyan-600 text-xs">
-            TW
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Tailwind CSS</h4>
-            <p class="text-[10px] text-slate-500">Modern Utility Design</p>
-          </div>
-        </div>
-
-        <!-- Bootstrap -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-purple-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center font-black text-purple-600 text-xs">
-            B
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Bootstrap 5</h4>
-            <p class="text-[10px] text-slate-500">Responsive Framework</p>
-          </div>
-        </div>
-
-        <!-- JavaScript -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-amber-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center font-bold text-amber-600 text-xs">
-            JS
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">JavaScript ES6+</h4>
-            <p class="text-[10px] text-slate-500">Interactive UI</p>
-          </div>
-        </div>
-
-        <!-- Git & GitHub -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-slate-400 transition">
-          <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-slate-700 text-xs">
-            GIT
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Git / GitHub</h4>
-            <p class="text-[10px] text-slate-500">Version Control</p>
-          </div>
-        </div>
-
-        <!-- Nginx & Apache -->
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-emerald-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center font-bold text-emerald-600 text-xs">
-            NG
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Nginx & Apache</h4>
-            <p class="text-[10px] text-slate-500">High Speed Server</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Duplicate for seamless infinite loop -->
-      <div class="marquee-content items-center" aria-hidden="true">
-        
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-red-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center font-black text-red-600">
-            L
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Laravel</h4>
-            <p class="text-[10px] text-slate-500">Framework Web Handal</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-indigo-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center font-bold text-indigo-600 text-xs">
-            PHP
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">PHP 8+</h4>
-            <p class="text-[10px] text-slate-500">Fast Backend Core</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-sky-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center font-bold text-sky-600 text-xs">
-            SQL
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">MySQL Database</h4>
-            <p class="text-[10px] text-slate-500">Reliable & Scalable</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-cyan-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center font-black text-cyan-600 text-xs">
-            TW
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Tailwind CSS</h4>
-            <p class="text-[10px] text-slate-500">Modern Utility Design</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-purple-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center font-black text-purple-600 text-xs">
-            B
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Bootstrap 5</h4>
-            <p class="text-[10px] text-slate-500">Responsive Framework</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-amber-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center font-bold text-amber-600 text-xs">
-            JS
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">JavaScript ES6+</h4>
-            <p class="text-[10px] text-slate-500">Interactive UI</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-slate-400 transition">
-          <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center font-bold text-slate-700 text-xs">
-            GIT
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Git / GitHub</h4>
-            <p class="text-[10px] text-slate-500">Version Control</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-emerald-300 transition">
-          <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center font-bold text-emerald-600 text-xs">
-            NG
-          </div>
-          <div>
-            <h4 class="text-sm font-bold text-slate-900">Nginx & Apache</h4>
-            <p class="text-[10px] text-slate-500">High Speed Server</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Tech Advantage Highlights -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-        <div class="p-6 rounded-2xl bg-white border border-slate-100 shadow-xs">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-3 font-bold">⚡</div>
-          <h4 class="font-bold text-slate-900 text-base">Performa Tinggi & Ringan</h4>
-          <p class="text-xs text-slate-500 mt-1">Struktur kode teroptimasi menjamin website terbuka cepat meski di jaringan seluler hemat kuota.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-slate-100 shadow-xs">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-3 font-bold">🔒</div>
-          <h4 class="font-bold text-slate-900 text-base">Standar Keamanan Kuat</h4>
-          <p class="text-xs text-slate-500 mt-1">Proteksi CSRF, enkripsi kata sandi, dan sanitasi input database mencegah celah berbahaya.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-slate-100 shadow-xs">
-          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-3 font-bold">📱</div>
-          <h4 class="font-bold text-slate-900 text-base">100% Mobile Responsive</h4>
-          <p class="text-xs text-slate-500 mt-1">Layout adaptif presisi menyesuaikan layar smartphone calon pelanggan Anda.</p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ================= DUAL ADMIN WHATSAPP CALLOUT ================= -->
-  <section id="kontak" class="py-20 bg-white border-t border-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="rounded-3xl border-2 border-blue-600 bg-white p-8 sm:p-12 shadow-xl relative overflow-hidden">
-        
-        <!-- Subtle Glow -->
-        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-blue-100/50 blur-3xl pointer-events-none"></div>
-
-        <div class="relative z-10 max-w-3xl">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            Online & Siap Konsultasi
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+            Proof of Work
           </span>
-
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-4 tracking-tight">
-            Siap Membangun Website Bisnis Anda? Konsultasikan Bersama Kami Sekarang!
+          <h2 class="section-heading text-3xl sm:text-4xl text-slate-900 mt-3">
+            Selected Projects
           </h2>
-
-          <p class="text-slate-600 mt-3 text-base sm:text-lg">
-            Tidak perlu ragu atau bingung. Ceritakan kebutuhan website Anda kepada kedua admin kami secara langsung melalui WhatsApp. Kami siap memberikan saran terbaik dan estimasi biaya secara gratis.
+          <p class="text-slate-600 mt-2 text-base font-normal max-w-xl">
+            A selection of digital solutions we've built for businesses and organizations.
           </p>
+        </div>
 
-          <!-- Dual Admin WhatsApp Cards (No phone numbers shown in text, direct link only) -->
-          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <!-- Admin 1: Nazar -->
-            <a href="https://wa.me/62895365509303?text=Halo%20Admin%20Nazar,%20saya%20ingin%20konsultasi%20pembuatan%20website%20di%20JAYYU." target="_blank" class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 bg-white hover:bg-blue-50/30 transition shadow-sm flex items-center justify-between group">
-              <div class="flex items-center gap-4">
-                <img src="assets/images/nazar_alfarija.jpeg" alt="Admin Nazar" class="w-12 h-12 rounded-xl object-cover border border-slate-200">
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-slate-900 group-hover:text-blue-600 transition">Admin 1 — Nazar</h4>
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  </div>
-                  <span class="text-xs text-blue-600 font-semibold block mt-0.5">Spesialis Teknis & Sistem Web</span>
-                  <span class="text-[11px] text-slate-400 font-medium">Klik untuk langsung chat via WhatsApp</span>
-                </div>
-              </div>
-              <div class="w-9 h-9 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition shrink-0">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/>
-                </svg>
-              </div>
-            </a>
+        <!-- Filter Tabs: All, Website, Web App, Mobile App -->
+        <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-slate-100 border border-slate-200/80">
+          <button data-filter="all" class="filter-tab active px-4 py-2 rounded-lg text-xs font-medium text-slate-700">All</button>
+          <button data-filter="website" class="filter-tab px-4 py-2 rounded-lg text-xs font-medium text-slate-700">Website</button>
+          <button data-filter="webapp" class="filter-tab px-4 py-2 rounded-lg text-xs font-medium text-slate-700">Web App</button>
+          <button data-filter="mobileapp" class="filter-tab px-4 py-2 rounded-lg text-xs font-medium text-slate-700">Mobile App</button>
+        </div>
+      </div>
 
-            <!-- Admin 2: Yusuf -->
-            <a href="https://wa.me/6283163895963?text=Halo%20Admin%20Yusuf,%20saya%20ingin%20konsultasi%20pembuatan%20website%20di%20JAYYU." target="_blank" class="p-5 rounded-2xl border border-slate-200 hover:border-blue-400 bg-white hover:bg-blue-50/30 transition shadow-sm flex items-center justify-between group">
-              <div class="flex items-center gap-4">
-                <img src="assets/images/yusuf_ramdany.jpeg" alt="Admin Yusuf" class="w-12 h-12 rounded-xl object-cover border border-slate-200">
-                <div>
-                  <div class="flex items-center gap-2">
-                    <h4 class="font-bold text-slate-900 group-hover:text-blue-600 transition">Admin 2 — Yusuf</h4>
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  </div>
-                  <span class="text-xs text-blue-600 font-semibold block mt-0.5">Spesialis Pemasaran & Paket</span>
-                  <span class="text-[11px] text-slate-400 font-medium">Klik untuk langsung chat via WhatsApp</span>
-                </div>
-              </div>
-              <div class="w-9 h-9 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition shrink-0">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/>
-                </svg>
-              </div>
-            </a>
-
+      <!-- Project Showcase Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: Bintang Motor -->
+        <div class="project-card rounded-2xl border border-slate-200/90 bg-white overflow-hidden clean-card flex flex-col justify-between" data-category="website">
+          <div>
+            <!-- Large Project Image -->
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-100 cursor-pointer group" onclick="openProjectModal('bintang-motor')">
+              <img src="assets/images/mockup_motor.jpg" alt="Bintang Motor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-medium bg-white/90 backdrop-blur-md text-slate-900 shadow-xs">
+                Sales & Catalog Website
+              </span>
+            </div>
+            <!-- Card Body -->
+            <div class="p-6">
+              <h3 class="card-heading text-xl text-slate-900">Bintang Motor</h3>
+              <p class="text-xs font-medium text-blue-600 mt-1">Website Development</p>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Interactive vehicle catalog with credit simulation and WhatsApp.
+              </p>
+            </div>
           </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-100 mt-2">
+            <div>
+              <span class="text-[11px] text-slate-400 font-normal block">Price Range</span>
+              <span class="text-sm font-semibold text-slate-900">Starting from Rp500.000</span>
+            </div>
+            <button onclick="openProjectModal('bintang-motor')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 transition">
+              <span>Lihat Proyek</span>
+            </button>
+          </div>
+        </div>
 
+        <!-- Project 2: Premier Automotive -->
+        <div class="project-card rounded-2xl border border-slate-200/90 bg-white overflow-hidden clean-card flex flex-col justify-between" data-category="website">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-100 cursor-pointer group" onclick="openProjectModal('premier-auto')">
+              <img src="assets/images/mockup_mobil.jpg" alt="Premier Automotive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-medium bg-white/90 backdrop-blur-md text-slate-900 shadow-xs">
+                Sales & Catalog Website
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="card-heading text-xl text-slate-900">Premier Automotive</h3>
+              <p class="text-xs font-medium text-blue-600 mt-1">Website Development</p>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Showcase platform for new & pre-owned vehicles with test drive booking.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-100 mt-2">
+            <div>
+              <span class="text-[11px] text-slate-400 font-normal block">Price Range</span>
+              <span class="text-sm font-semibold text-slate-900">Starting from Rp500.000</span>
+            </div>
+            <button onclick="openProjectModal('premier-auto')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 transition">
+              <span>Lihat Proyek</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: Luxe Living -->
+        <div class="project-card rounded-2xl border border-slate-200/90 bg-white overflow-hidden clean-card flex flex-col justify-between" data-category="website">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-100 cursor-pointer group" onclick="openProjectModal('luxe-living')">
+              <img src="assets/images/mockup_perumahan.jpg" alt="Luxe Living — Serene Valley" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-medium bg-white/90 backdrop-blur-md text-slate-900 shadow-xs">
+                Property & Cluster Catalog
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="card-heading text-xl text-slate-900">Luxe Living — Serene Valley</h3>
+              <p class="text-xs font-medium text-blue-600 mt-1">Website Development</p>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Modern property catalog featuring siteplans, floor layouts, and KPR estimation.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-100 mt-2">
+            <div>
+              <span class="text-[11px] text-slate-400 font-normal block">Price Range</span>
+              <span class="text-sm font-semibold text-slate-900">Starting from Rp500.000</span>
+            </div>
+            <button onclick="openProjectModal('luxe-living')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 transition">
+              <span>Lihat Proyek</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: Nexus ERP (Web Application) -->
+        <div class="project-card rounded-2xl border border-slate-200/90 bg-white overflow-hidden clean-card flex flex-col justify-between" data-category="webapp">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-100 cursor-pointer group" onclick="openProjectModal('nexus-erp')">
+              <img src="assets/images/mockup_webapp.jpg" alt="Nexus Logistics & ERP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-medium bg-white/90 backdrop-blur-md text-slate-900 shadow-xs">
+                Web Application
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="card-heading text-xl text-slate-900">Nexus Logistics & ERP</h3>
+              <p class="text-xs font-medium text-blue-600 mt-1">Web Application</p>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Custom web-based ERP and inventory tracking system built to streamline warehouse operations.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-100 mt-2">
+            <div>
+              <span class="text-[11px] text-slate-400 font-normal block">Project Scope</span>
+              <span class="text-sm font-semibold text-slate-900">Custom Project</span>
+            </div>
+            <button onclick="openProjectModal('nexus-erp')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 transition">
+              <span>Lihat Proyek</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5: Aura Mobile App (Mobile App) -->
+        <div class="project-card rounded-2xl border border-slate-200/90 bg-white overflow-hidden clean-card flex flex-col justify-between" data-category="mobileapp">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-100 cursor-pointer group" onclick="openProjectModal('aura-mobile')">
+              <img src="assets/images/mockup_mobileapp.jpg" alt="Aura Mobile Commerce" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-medium bg-white/90 backdrop-blur-md text-slate-900 shadow-xs">
+                Mobile Application
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="card-heading text-xl text-slate-900">Aura Mobile Commerce</h3>
+              <p class="text-xs font-medium text-blue-600 mt-1">Mobile App Development</p>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Native-feel iOS and Android mobile app with live parcel tracking and catalog browsing.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-100 mt-2">
+            <div>
+              <span class="text-[11px] text-slate-400 font-normal block">Project Scope</span>
+              <span class="text-sm font-semibold text-slate-900">Custom Project</span>
+            </div>
+            <button onclick="openProjectModal('aura-mobile')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 transition">
+              <span>Lihat Proyek</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6: Kopi & Rasa -->
+        <div class="project-card rounded-2xl border border-slate-200/90 bg-white overflow-hidden clean-card flex flex-col justify-between" data-category="website">
+          <div>
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-100 cursor-pointer group" onclick="openProjectModal('kopi-rasa')">
+              <img src="assets/images/mockup_umkm.jpg" alt="Kopi & Rasa Roastery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-medium bg-white/90 backdrop-blur-md text-slate-900 shadow-xs">
+                Retail & Catalog Website
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="card-heading text-xl text-slate-900">Kopi & Rasa Roastery</h3>
+              <p class="text-xs font-medium text-blue-600 mt-1">Website Development</p>
+              <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                Artisan coffee catalog and online store with store locator and direct orders.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-100 mt-2">
+            <div>
+              <span class="text-[11px] text-slate-400 font-normal block">Price Range</span>
+              <span class="text-sm font-semibold text-slate-900">Starting from Rp700.000</span>
+            </div>
+            <button onclick="openProjectModal('kopi-rasa')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 transition">
+              <span>Lihat Proyek</span>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -1263,174 +544,626 @@
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ================= 6. WEBSITE PACKAGES (PRICING) ================= -->
+  <section id="pricing" class="hidden py-20 md:py-28 bg-[#f8fafc] border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-16 text-left">
+        <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+          Transparent Investment
+        </span>
+        <h2 class="section-heading text-3xl sm:text-4xl text-slate-900 mt-3">
+          Website Packages
+        </h2>
+        <p class="text-slate-600 mt-2 text-base font-normal">
+          Choose a solution based on your business needs.
+        </p>
+      </div>
+
+      <!-- Packages Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Package 1: Website Sales / Catalog (HIGHLIGHT) -->
+        <div class="p-8 rounded-2xl bg-white border-2 border-blue-600 clean-card shadow-md flex flex-col justify-between relative">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100 mb-4">
+              Featured Solution
+            </span>
+            <h3 class="card-heading text-2xl text-slate-900">Website Sales / Catalog</h3>
+            <p class="text-slate-500 text-xs mt-1">Motor • Mobil • Properti • Retail</p>
+
+            <div class="mt-6 mb-4">
+              <span class="text-xs text-slate-400 block font-normal">Investment</span>
+              <div class="text-2xl sm:text-3xl font-bold text-blue-600 mt-1">Starting from Rp500.000</div>
+              <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+                Final price depends on features and project requirements.
+              </p>
+            </div>
+
+            <p class="text-slate-600 text-sm mt-4 leading-relaxed">
+              Designed for automotive and real estate sales teams requiring interactive product catalogs, credit calculation, and WhatsApp closing.
+            </p>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openConsultModal('Website Sales / Catalog (Starting from Rp500.000)')" class="w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm text-center shadow-sm transition active:scale-95">
+              Inquire Package
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 2: Website Business -->
+        <div class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 mb-4">
+              Corporate & Profile
+            </span>
+            <h3 class="card-heading text-2xl text-slate-900">Website Business</h3>
+            <p class="text-slate-500 text-xs mt-1">Company Profile & Services</p>
+
+            <div class="mt-6 mb-4">
+              <span class="text-xs text-slate-400 block font-normal">Investment</span>
+              <div class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Custom</div>
+              <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+                Tailored based on page count and custom interactive components.
+              </p>
+            </div>
+
+            <p class="text-slate-600 text-sm mt-4 leading-relaxed">
+              Professional online presence designed to establish corporate credibility, present offerings, and drive qualified business inquiries.
+            </p>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openConsultModal('Website Business (Custom)')" class="w-full py-3.5 px-4 rounded-xl border border-slate-200 hover:border-slate-900 text-slate-900 font-semibold text-xs sm:text-sm text-center transition active:scale-95">
+              Discuss Requirements
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 3: Web Application -->
+        <div class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 mb-4">
+              Cloud System
+            </span>
+            <h3 class="card-heading text-2xl text-slate-900">Web Application</h3>
+            <p class="text-slate-500 text-xs mt-1">Custom Operations & Dashboards</p>
+
+            <div class="mt-6 mb-4">
+              <span class="text-xs text-slate-400 block font-normal">Investment</span>
+              <div class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Custom</div>
+              <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+                Structured around software complexity and database architecture.
+              </p>
+            </div>
+
+            <p class="text-slate-600 text-sm mt-4 leading-relaxed">
+              Custom web software, internal management tools, inventory flows, and operational portals engineered for stability and scale.
+            </p>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openConsultModal('Web Application (Custom)')" class="w-full py-3.5 px-4 rounded-xl border border-slate-200 hover:border-slate-900 text-slate-900 font-semibold text-xs sm:text-sm text-center transition active:scale-95">
+              Discuss Requirements
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 4: Mobile Application -->
+        <div class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 mb-4">
+              iOS & Android
+            </span>
+            <h3 class="card-heading text-2xl text-slate-900">Mobile Application</h3>
+            <p class="text-slate-500 text-xs mt-1">Native & Cross-Platform Apps</p>
+
+            <div class="mt-6 mb-4">
+              <span class="text-xs text-slate-400 block font-normal">Investment</span>
+              <div class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Custom</div>
+              <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+                Scoped according to API integrations and supported device types.
+              </p>
+            </div>
+
+            <p class="text-slate-600 text-sm mt-4 leading-relaxed">
+              High-performance mobile applications built to engage users directly on smartphones with push alerts and modern UX.
+            </p>
+          </div>
+
+          <div class="pt-8">
+            <button onclick="openConsultModal('Mobile Application (Custom)')" class="w-full py-3.5 px-4 rounded-xl border border-slate-200 hover:border-slate-900 text-slate-900 font-semibold text-xs sm:text-sm text-center transition active:scale-95">
+              Discuss Requirements
+            </button>
+          </div>
+        </div>
+
+        <!-- Package 5: Custom Digital Solution -->
+        <div class="p-8 rounded-2xl bg-white border border-slate-200/90 clean-card flex flex-col justify-between md:col-span-2 lg:col-span-2">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200 mb-4">
+              Enterprise Engineering
+            </span>
+            <h3 class="card-heading text-2xl text-slate-900">Custom Digital Solution</h3>
+            <p class="text-slate-500 text-xs mt-1">API Integrations • Migration • Maintenance</p>
+
+            <div class="mt-6 mb-4">
+              <span class="text-xs text-slate-400 block font-normal">Investment</span>
+              <div class="text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Custom</div>
+              <p class="text-[11px] text-slate-500 mt-2 leading-relaxed">
+                Consult with our engineering team for dedicated milestones.
+              </p>
+            </div>
+
+            <p class="text-slate-600 text-sm mt-4 leading-relaxed max-w-xl">
+              Solutions designed around your specific requirements: legacy system refactoring, third-party API connectivity, security audits, and dedicated ongoing maintenance.
+            </p>
+          </div>
+
+          <div class="pt-8 max-w-xs">
+            <button onclick="openConsultModal('Custom Digital Solution (Custom)')" class="w-full py-3.5 px-4 rounded-xl border border-slate-200 hover:border-slate-900 text-slate-900 font-semibold text-xs sm:text-sm text-center transition active:scale-95">
+              Discuss Requirements
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 7. ABOUT JAYRYU ================= -->
+  <section id="about" class="py-20 md:py-28 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: About Statement -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+            Who We Are
+          </span>
+          <h2 class="section-heading text-3xl sm:text-4xl text-slate-900">
+            About JAYRYU
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
+            JAYRYU is a technology team focused on building practical digital solutions for businesses and organizations.
+          </p>
+        </div>
+
+        <!-- Right: Vision Card -->
+        <div class="lg:col-span-6">
+          <div class="p-8 sm:p-10 rounded-2xl bg-slate-50 border border-slate-200/80 relative">
+            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-3">Our Vision</span>
+            <p class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+              “Building useful digital experiences through technology, creativity, and collaboration.”
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+              <span class="text-xs font-medium text-slate-500">Focused on measurable commercial results</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="team" class="mt-14 border-t border-slate-200/20 pt-10">
+        <div class="mb-6">
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-300">Profil Tim</span>
+          <h3 class="section-heading mt-2 text-2xl text-slate-900">Para Pendiri</h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <button type="button" onclick="openTeamModal('rayhan')" aria-label="Buka profil Rayhan" class="team-mini-card group">
+            <span class="team-mini-avatar team-mini-founder" aria-hidden="true">R</span>
+            <span class="team-mini-copy"><span class="team-mini-name">Rayhan</span><span class="team-mini-role">Founder &amp; Lead Developer</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
+          </button>
+          <button type="button" onclick="openTeamModal('nazar')" aria-label="Buka profil Nazar Alfarija" class="team-mini-card group">
+            <span class="team-mini-avatar"><img src="profil%20pendiri/Nazar%20Alfarija.jpeg" alt=""></span>
+            <span class="team-mini-copy"><span class="team-mini-name">Nazar Alfarija</span><span class="team-mini-role">Co-Founder &amp; Web Developer</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
+          </button>
+          <button type="button" onclick="openTeamModal('yusuf')" aria-label="Buka profil Yusuf Ramdany" class="team-mini-card group">
+            <span class="team-mini-avatar"><img src="profil%20pendiri/Yusuf%20Ramdany.jpeg" alt=""></span>
+            <span class="team-mini-copy"><span class="team-mini-name">Yusuf Ramdany</span><span class="team-mini-role">Co-Founder &amp; Marketing</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9. TECHNOLOGY (TECHNICAL TRUST) ================= -->
+  <section id="technology" class="py-20 md:py-28 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-2xl mb-16 text-left">
+        <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+          Technical Trust
+        </span>
+        <h2 class="section-heading text-3xl sm:text-4xl text-slate-900 mt-3">
+          Technology
+        </h2>
+        <p class="text-slate-600 mt-2 text-base font-normal">
+          Built with reliable and modern technologies.
+        </p>
+      </div>
+
+      <!-- Clean Minimal Tech Grid (Supporting trust, not a resume dump) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">LV</div>
+          <h4 class="text-sm font-semibold text-slate-900">Laravel</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Backend Framework</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">PHP</div>
+          <h4 class="text-sm font-semibold text-slate-900">PHP 8+</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Core Runtime</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">SQL</div>
+          <h4 class="text-sm font-semibold text-slate-900">MySQL</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Relational DB</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">JS</div>
+          <h4 class="text-sm font-semibold text-slate-900">JavaScript</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Dynamic Web UI</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">HTML</div>
+          <h4 class="text-sm font-semibold text-slate-900">HTML & CSS</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Modern Semantics</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-cyan-50 text-cyan-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">API</div>
+          <h4 class="text-sm font-semibold text-slate-900">REST APIs</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">System Integration</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">RN</div>
+          <h4 class="text-sm font-semibold text-slate-900">React Native</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Mobile Applications</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">V</div>
+          <h4 class="text-sm font-semibold text-slate-900">Vue.js</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Interactive Interfaces</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-violet-50 text-violet-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">FL</div>
+          <h4 class="text-sm font-semibold text-slate-900">Flutter</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Cross-platform Apps</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">FB</div>
+          <h4 class="text-sm font-semibold text-slate-900">Firebase</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Backend & Cloud Services</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">FS</div>
+          <h4 class="text-sm font-semibold text-slate-900">ForgeSQL</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Database Modeling</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">GIT</div>
+          <h4 class="text-sm font-semibold text-slate-900">Git & GitHub</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Version Control</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">API</div>
+          <h4 class="text-sm font-semibold text-slate-900">Postman</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">API Debugging</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">DEV</div>
+          <h4 class="text-sm font-semibold text-slate-900">Chrome DevTools</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Browser Debugging</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-cyan-50 text-cyan-700 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">DO</div>
+          <h4 class="text-sm font-semibold text-slate-900">Docker</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">Development Environment</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-slate-200 bg-white text-center hover:border-blue-300 transition">
+          <div class="w-10 h-10 rounded-lg bg-violet-50 text-violet-600 font-bold flex items-center justify-center mx-auto mb-2.5 text-sm">PHP</div>
+          <h4 class="text-sm font-semibold text-slate-900">PHPUnit</h4>
+          <p class="text-[11px] text-slate-400 mt-0.5">PHP Testing</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 10. FINAL CTA ================= -->
+  <section id="contact" class="py-20 md:py-28 bg-[#080d1a] text-white relative overflow-hidden">
+    <!-- Subtle blue glow -->
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="max-w-3xl mx-auto space-y-6">
+        <h2 class="hero-heading text-3xl sm:text-5xl text-white">
+          Have a Project in Mind?
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto font-normal">
+          Let's turn your idea into a digital solution.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <button onclick="openConsultModal('Final CTA — Start a Project')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base shadow-lg shadow-blue-600/30 transition-all active:scale-95">
+            <span>Start a Project</span>
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+
+          <a href="https://wa.me/62895365509303?text=Halo%20Tim%20JAYRYU,%20saya%20ingin%20konsultasi%20proyek%20baru." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold text-base transition-all">
+            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11. FOOTER ================= -->
   <footer class="bg-white border-t border-slate-100 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         
-        <!-- Company Info -->
-        <div class="md:col-span-5 space-y-4">
-          <div class="flex items-center gap-3">
-            <img src="assets/images/logo.png" alt="Logo JAYYU" class="h-9 sm:h-10 w-auto object-contain">
-          </div>
-          <p class="text-xs sm:text-sm text-slate-500 max-w-sm leading-relaxed">
-            Penyedia jasa pembuatan website profesional, cepat, dan terjangkau untuk UMKM, Sales Dealer, dan Instansi di Indonesia.
+        <!-- Brand -->
+        <div class="md:col-span-5 space-y-3">
+          <div class="text-xl font-bold tracking-tight text-slate-900">JAYRYU</div>
+          <p class="text-xs font-medium text-blue-600">Web & App Development</p>
+          <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
+            Technology company building websites, web applications, and mobile solutions for forward-thinking businesses.
           </p>
-          <div class="text-xs text-slate-600 space-y-1.5 pt-1">
-            <p class="font-bold text-slate-800">Hubungi Konsultasi WhatsApp:</p>
-            <div class="flex flex-col sm:flex-row gap-3 pt-1">
-              <a href="https://wa.me/62895365509303" target="_blank" class="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-semibold hover:underline">
-                <span>💬 Chat Admin 1 (Nazar)</span>
-              </a>
-              <a href="https://wa.me/6283163895963" target="_blank" class="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-semibold hover:underline">
-                <span>💬 Chat Admin 2 (Yusuf)</span>
-              </a>
-            </div>
-          </div>
         </div>
 
-        <!-- Quick Links -->
+        <!-- Menu Links: English -->
         <div class="md:col-span-3 space-y-3">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">Navigasi</h4>
-          <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
-            <li><a href="#beranda" class="hover:text-blue-600 transition">Beranda</a></li>
-            <li><a href="#tentang" class="hover:text-blue-600 transition">Tentang Kami</a></li>
-            <li><a href="#layanan" class="hover:text-blue-600 transition">Daftar Paket & Harga</a></li>
-            <li><a href="#sales-showcase" class="hover:text-blue-600 transition">Katalog Khusus Sales</a></li>
-            <li><a href="#client" class="hover:text-blue-600 transition">Klien & Portofolio</a></li>
-            <li><a href="#teknologi" class="hover:text-blue-600 transition">Teknologi Digunakan</a></li>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900">Navigation</h4>
+          <ul class="space-y-2 text-xs font-medium text-slate-600">
+            <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+            <li><a href="#services" class="hover:text-blue-600 transition">Services</a></li>
+            <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+            <li><a href="#clients" class="hover:text-blue-600 transition">Clients</a></li>
+            <li><a href="#technology" class="hover:text-blue-600 transition">Technology</a></li>
           </ul>
         </div>
 
-        <!-- Package Categories Quick Access -->
+        <!-- Contact Options -->
         <div class="md:col-span-4 space-y-3">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900">Kategori Paket</h4>
-          <div class="space-y-2 text-xs sm:text-sm text-slate-600">
-            <div class="p-2.5 rounded-xl border border-slate-100 bg-white">
-              <p class="font-bold text-slate-900">Website UMKM</p>
-              <p class="text-[11px] text-slate-500">Rp700.000 - Rp1.500.000 (Toko, Cafe & Jasa)</p>
-            </div>
-            <div class="p-2.5 rounded-xl border border-slate-100 bg-white">
-              <p class="font-bold text-slate-900">Website Sales / Katalog</p>
-              <p class="text-[11px] text-slate-500">Mulai Rp500.000 (Motor, Mobil, Perumahan)</p>
-            </div>
-            <div class="p-2.5 rounded-xl border border-slate-100 bg-white">
-              <p class="font-bold text-slate-900">Website Informasi / Instansi</p>
-              <p class="text-[11px] text-slate-500">Custom Sesuai Kebutuhan (Desa & Lembaga)</p>
-            </div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900">Direct Contact</h4>
+          <div class="space-y-2 text-xs text-slate-600">
+            <p>
+              <a href="https://wa.me/62895365509303" target="_blank" class="hover:text-blue-600 transition flex items-center gap-2">
+                <span>💬 Admin 1 (Nazar): Technical & Systems</span>
+              </a>
+            </p>
+            <p>
+              <a href="https://wa.me/6283163895963" target="_blank" class="hover:text-blue-600 transition flex items-center gap-2">
+                <span>💬 Admin 2 (Yusuf): Marketing & Business</span>
+              </a>
+            </p>
+            <p class="text-slate-400 pt-1">Email: contact@jayryu.com</p>
           </div>
         </div>
 
       </div>
 
       <div class="mt-12 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-        <p>© 2026 JAYYU Digital Solution. All rights reserved.</p>
-        <p>Solusi Digital & Pembuatan Website Profesional.</p>
+        <p>© 2026 JAYRYU. All rights reserved.</p>
+        <p>Built with precision and modern web standards.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ================= FLOATING WHATSAPP BUTTON & MODAL ================= -->
-  <!-- Floating Button -->
-  <div class="fixed bottom-6 right-6 z-50">
-    <button id="waFloatingBtn" aria-label="Hubungi Admin WhatsApp" class="relative group flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm px-4 py-3.5 rounded-full shadow-lg pulse-wa transition-all duration-200">
-      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-      </svg>
-      <span class="hidden sm:inline">Chat 2 Admin WA</span>
-      <span class="flex h-3 w-3 relative -top-1 -right-1">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-      </span>
-    </button>
-  </div>
-
-  <!-- WhatsApp Selector Modal Popover (No phone numbers shown in text, direct link only) -->
-  <div id="waModal" class="hidden fixed bottom-24 right-6 z-50 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-fade-in">
-    <!-- Header -->
-    <div class="bg-blue-600 text-white p-4 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-          </svg>
-        </div>
-        <div>
-          <h4 class="font-bold text-sm">Konsultasi WhatsApp JAYYU</h4>
-          <p class="text-[11px] text-blue-100">Pilih admin yang ingin Anda hubungi:</p>
-        </div>
-      </div>
-      <button id="closeWaModal" class="text-white/80 hover:text-white p-1">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Context Info -->
-    <div class="p-3 bg-blue-50 border-b border-blue-100 text-xs text-blue-800 flex items-center gap-2">
-      <span class="font-bold">Info:</span>
-      <span id="waModalContext" class="truncate">Layanan Website JAYYU</span>
-    </div>
-
-    <!-- Admin Choices (No digits shown, only direct links) -->
-    <div class="p-4 space-y-3 bg-white">
+  <!-- ================= 12. PROJECT DETAIL MODAL ================= -->
+  <div id="projectModal" class="modal-backdrop hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="modal-content relative max-w-3xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-100 my-auto">
       
-      <!-- Option 1: Nazar -->
-      <a id="waModalNazarLink" href="https://wa.me/62895365509303?text=Halo%20Admin%20Nazar,%20saya%20ingin%20konsultasi%20pembuatan%20website%20di%20JAYYU." target="_blank" class="p-3 rounded-xl border border-slate-200 hover:border-emerald-400 bg-white hover:bg-emerald-50/30 flex items-center justify-between transition group">
-        <div class="flex items-center gap-3">
-          <img src="assets/images/nazar_alfarija.jpeg" alt="Nazar" class="w-10 h-10 rounded-lg object-cover border border-slate-200">
-          <div>
-            <div class="flex items-center gap-1.5">
-              <h5 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700">Admin 1 — Nazar</h5>
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            </div>
-            <p class="text-[11px] text-slate-500">Spesialis Teknis & Sistem Web</p>
-          </div>
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+        <div>
+          <span id="pmBadge" class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
+            Category
+          </span>
+          <h3 id="pmName" class="text-2xl font-bold text-slate-900 mt-2">Project Name</h3>
+          <p id="pmCategory" class="text-xs text-slate-400 font-medium">Category</p>
         </div>
-        <span class="text-xs font-bold text-emerald-600 group-hover:translate-x-0.5 transition">Chat WA →</span>
-      </a>
-
-      <!-- Option 2: Yusuf -->
-      <a id="waModalYusufLink" href="https://wa.me/6283163895963?text=Halo%20Admin%20Yusuf,%20saya%20ingin%20konsultasi%20pembuatan%20website%20di%20JAYYU." target="_blank" class="p-3 rounded-xl border border-slate-200 hover:border-emerald-400 bg-white hover:bg-emerald-50/30 flex items-center justify-between transition group">
-        <div class="flex items-center gap-3">
-          <img src="assets/images/yusuf_ramdany.jpeg" alt="Yusuf" class="w-10 h-10 rounded-lg object-cover border border-slate-200">
-          <div>
-            <div class="flex items-center gap-1.5">
-              <h5 class="text-sm font-bold text-slate-900 group-hover:text-emerald-700">Admin 2 — Yusuf</h5>
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            </div>
-            <p class="text-[11px] text-slate-500">Spesialis Pemasaran & Paket</p>
-          </div>
-        </div>
-        <span class="text-xs font-bold text-emerald-600 group-hover:translate-x-0.5 transition">Chat WA →</span>
-      </a>
-
-    </div>
-
-    <div class="p-3 bg-slate-50 border-t border-slate-100 text-center">
-      <p class="text-[11px] text-slate-400">Respon Cepat • Tanpa Biaya Konsultasi</p>
-    </div>
-  </div>
-
-  <!-- ================= LIGHTBOX IMAGE MODAL ================= -->
-  <div id="lightboxModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-100">
-      <!-- Header -->
-      <div class="p-4 bg-white border-b border-slate-100 flex items-center justify-between">
-        <h4 id="lightboxTitle" class="font-bold text-slate-900 text-sm sm:text-base">Pratinjau Gambar</h4>
-        <button id="closeLightbox" class="text-slate-400 hover:text-slate-700 p-1">
+        <button id="closeProjectModal" class="p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
 
-      <!-- Image Area -->
-      <div class="p-4 bg-slate-50 flex items-center justify-center max-h-[75vh] overflow-auto">
-        <img id="lightboxImg" src="" alt="Pratinjau" class="max-w-full max-h-[70vh] object-contain rounded-lg shadow-sm">
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-6 max-h-[70vh] overflow-y-auto">
+        <!-- Project Preview Image -->
+        <div class="rounded-xl overflow-hidden border border-slate-200 aspect-[16/9] bg-slate-100">
+          <img id="pmImage" src="" alt="Project Image" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Description -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Overview</h4>
+          <p id="pmShortDesc" class="text-slate-600 text-sm leading-relaxed"></p>
+        </div>
+
+        <!-- Features List -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Core Features</h4>
+          <ul id="pmFeatures" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></ul>
+        </div>
+
+        <!-- Tech Stack -->
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5">Technologies</h4>
+          <div id="pmTech" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Project Range & Price -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-xs text-slate-400 block">Investment Range</span>
+            <div id="pmPrice" class="text-lg font-bold text-slate-900 mt-0.5"></div>
+            <span id="pmPriceNote" class="text-[11px] text-slate-500 block"></span>
+          </div>
+          <button id="pmCtaBtn" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition active:scale-95 shrink-0">
+            <span>Discuss Similar Project</span>
+          </button>
+        </div>
+
       </div>
+
     </div>
+  </div>
+
+  <!-- ================= 13. TEAM PROFILE MODAL ================= -->
+  <div id="teamModal" class="modal-backdrop hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="modal-content relative max-w-xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-100 my-auto">
+      
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-slate-400">Team Profile</h4>
+        <button id="closeTeamModal" class="p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-6">
+        <div class="flex items-center gap-5">
+          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-slate-100 shrink-0 bg-slate-900">
+            <img id="tmImage" src="" alt="Team Member" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 id="tmName" class="text-xl sm:text-2xl font-bold text-slate-900"></h3>
+            <p id="tmRole" class="text-xs sm:text-sm font-medium text-blue-600 mt-1"></p>
+            <p id="tmBio" class="text-xs text-slate-500 mt-1.5 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Background & Role</h5>
+          <p id="tmDetails" class="text-slate-600 text-sm leading-relaxed"></p>
+        </div>
+
+        <a id="tmWebsite" href="https://rhyru9.xyz/" target="_blank" rel="noopener noreferrer" class="hidden text-sm font-semibold text-blue-600 hover:text-blue-500 transition">Visit rhyru9.xyz <span aria-hidden="true">↗</span></a>
+
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5">Focus Areas</h5>
+          <div id="tmFocus" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100">
+          <a id="tmWaBtn" href="" target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition active:scale-95 text-center">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>Direct WhatsApp Consultation</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= 14. UNIFIED CONSULTATION WHATSAPP MODAL ================= -->
+  <div id="consultModal" class="modal-backdrop hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="modal-content relative max-w-md w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-100 my-auto">
+      
+      <!-- Modal Header -->
+      <div class="bg-blue-600 text-white p-6 flex items-center justify-between">
+        <div>
+          <h4 class="font-bold text-lg">WhatsApp Consultation</h4>
+          <p class="text-xs text-blue-100 mt-0.5">Select a JAYRYU specialist:</p>
+        </div>
+        <button id="closeConsultModal" class="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Subject Context -->
+      <div class="p-4 bg-blue-50/70 border-b border-blue-100 text-xs text-blue-900">
+        <span class="font-semibold block text-[10px] uppercase tracking-wider text-blue-500">Inquiry Topic:</span>
+        <span id="consultContext" class="font-medium truncate block mt-0.5"></span>
+      </div>
+
+      <!-- Admin Contacts -->
+      <div class="p-6 space-y-3.5 bg-white">
+        
+        <!-- Nazar: Tech -->
+        <a id="consultNazarLink" href="" target="_blank" class="p-4 rounded-xl border border-slate-200 hover:border-blue-400 bg-white hover:bg-blue-50/30 flex items-center justify-between transition group">
+          <div class="flex items-center gap-3.5">
+            <img src="assets/images/nazar_realistic.jpg" alt="Nazar" class="w-11 h-11 rounded-xl object-cover border border-slate-200 shrink-0">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h5 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition">Nazar Alfarija</h5>
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              </div>
+              <p class="text-xs text-slate-500">Technical & Web Architecture</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-blue-600 group-hover:translate-x-0.5 transition">Chat →</span>
+        </a>
+
+        <!-- Yusuf: Marketing -->
+        <a id="consultYusufLink" href="" target="_blank" class="p-4 rounded-xl border border-slate-200 hover:border-blue-400 bg-white hover:bg-blue-50/30 flex items-center justify-between transition group">
+          <div class="flex items-center gap-3.5">
+            <img src="assets/images/yusuf_realistic.jpg" alt="Yusuf" class="w-11 h-11 rounded-xl object-cover border border-slate-200 shrink-0">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h5 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition">Yusuf Ramdany</h5>
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              </div>
+              <p class="text-xs text-slate-500">Marketing & Requirements</p>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-blue-600 group-hover:translate-x-0.5 transition">Chat →</span>
+        </a>
+
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-100 text-center">
+        <p class="text-[11px] text-slate-400">Direct response from founders • Free consultation</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= 15. SINGLE FLOATING WHATSAPP BUTTON ================= -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button onclick="openConsultModal('Floating WhatsApp Button')" aria-label="WhatsApp Consultation" class="wa-float-pulse flex items-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-4 py-3.5 rounded-full shadow-lg transition-all duration-200 active:scale-95">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+      <span>Chat on WhatsApp</span>
+    </button>
   </div>
 
   <!-- Scripts -->
