@@ -4,6 +4,113 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Services open as a left-side drawer so the page keeps its editorial flow.
+  const servicesPanel = document.getElementById('services');
+  const servicesBackdrop = document.getElementById('servicesBackdrop');
+  const servicesCloseBtn = document.getElementById('servicesCloseBtn');
+  const serviceTitle = document.getElementById('serviceDetailTitle');
+  const serviceDescription = document.getElementById('serviceDetailDescription');
+  const serviceCategoryButtons = document.querySelectorAll('[data-service-category]');
+  const serviceDetails = {
+    web: {
+      title: 'Website Development',
+      description: 'Website company profile, landing page, katalog, dan toko online yang responsif, cepat, serta disesuaikan dengan karakter bisnis Anda.'
+    },
+    app: {
+      title: 'Mobile App Development',
+      description: 'Aplikasi Android dan iOS untuk membantu pelanggan mengakses layanan, informasi, dan transaksi bisnis dengan lebih mudah.'
+    },
+    bug: {
+      title: 'Bug Fixing & Security',
+      description: 'Pemeriksaan dan perbaikan bug, celah keamanan, serta masalah teknis agar website dan aplikasi berjalan lebih aman dan stabil.'
+    },
+    maintenance: {
+      title: 'Website Maintenance',
+      description: 'Perawatan rutin, pembaruan konten dan sistem, backup, serta pemantauan performa agar layanan digital tetap terjaga.'
+    },
+    custom: {
+      title: 'Custom Digital Solutions',
+      description: 'Sistem, integrasi API, dan fitur khusus yang dirancang mengikuti alur kerja serta kebutuhan bisnis Anda.'
+    }
+  };
+  const openServices = () => {
+    if (!servicesPanel || !servicesBackdrop) return;
+    servicesPanel.classList.add('is-open');
+    servicesPanel.setAttribute('aria-hidden', 'false');
+    servicesBackdrop.hidden = false;
+    document.body.classList.add('services-open');
+  };
+  const closeServices = () => {
+    if (!servicesPanel || !servicesBackdrop) return;
+    servicesPanel.classList.remove('is-open');
+    servicesPanel.setAttribute('aria-hidden', 'true');
+    serviceCategoryButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+    document.body.classList.remove('services-open');
+    window.setTimeout(() => {
+      if (!servicesPanel.classList.contains('is-open')) servicesBackdrop.hidden = true;
+    }, 340);
+  };
+  const openServiceCategory = category => {
+    const detail = serviceDetails[category] || serviceDetails.web;
+    if (serviceTitle) serviceTitle.textContent = detail.title;
+    if (serviceDescription) serviceDescription.textContent = detail.description;
+    serviceCategoryButtons.forEach(button => {
+      const selected = button.dataset.serviceCategory === category;
+      button.setAttribute('aria-expanded', String(selected));
+      button.classList.toggle('is-active', selected);
+    });
+    openServices();
+  };
+  serviceCategoryButtons.forEach(button => {
+    button.addEventListener('click', () => openServiceCategory(button.dataset.serviceCategory));
+  });
+  servicesCloseBtn?.addEventListener('click', closeServices);
+  servicesBackdrop?.addEventListener('click', closeServices);
+  servicesPanel?.querySelector('.service-detail-cta')?.addEventListener('click', closeServices);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && servicesPanel?.classList.contains('is-open')) closeServices();
+  });
+
+  // Scroll reveals move content from alternating directions; headings reveal letter by letter.
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if ('IntersectionObserver' in window && !motionPreference.matches) {
+    const animatedHeadings = document.querySelectorAll('#projectArchive .section-heading, #about .section-heading, #technology .section-heading, #contact h2');
+    animatedHeadings.forEach(heading => {
+      if (heading.children.length) return;
+      const label = heading.textContent.trim();
+      heading.setAttribute('aria-label', label);
+      const fragment = document.createDocumentFragment();
+      Array.from(label).forEach((character, index) => {
+        const letter = document.createElement('span');
+        letter.className = character === ' ' ? 'scroll-heading-space' : 'scroll-heading-letter';
+        letter.textContent = character === ' ' ? '\u00a0' : character;
+        letter.style.setProperty('--letter-delay', `${index * (window.innerWidth < 768 ? 16 : 24)}ms`);
+        letter.setAttribute('aria-hidden', 'true');
+        fragment.appendChild(letter);
+      });
+      heading.replaceChildren(fragment);
+    });
+
+    const revealTargets = document.querySelectorAll(
+      '#statsSection .grid > div, #clients > .text-center, #projectArchive .flex.flex-col > div:first-child, #projectArchive .trusted-demo-logo, #about > .max-w-7xl > .grid > div, #team .team-mini-card, #technology .max-w-2xl > *, #technology .grid > div, #contact .max-w-3xl > *, footer .grid > div'
+    );
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' });
+
+    revealTargets.forEach((element, index) => {
+      const direction = index % 3 === 0 ? 'left' : index % 3 === 1 ? 'right' : 'up';
+      element.classList.add('scroll-reveal');
+      element.dataset.reveal = direction;
+      element.style.setProperty('--reveal-delay', `${(index % 4) * 90}ms`);
+      revealObserver.observe(element);
+    });
+  }
+
   // 1. Mobile Menu Controller
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -256,11 +363,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const teamDatabase = {
     'nazar': {
       name: 'Nazar Alfarija',
-      role: 'Co-Founder & Web Developer',
+      role: 'CCO — Analisis & Web',
       image: 'profil pendiri/Nazar Alfarija.jpeg',
-      bio: 'Web development, system architecture, and digital solutions.',
-      details: 'Universitas Bina Sarana Informatika. Specializes in web system architecture, backend logic, relational databases, and performance optimization to ensure platforms run fast, securely, and reliably.',
-      focus: ['Web Development', 'System Development', 'Database', 'Digital Solutions'],
+      bio: 'Memimpin analisis kebutuhan dan pengembangan solusi web.',
+      details: 'Berfokus pada analisis kebutuhan, perencanaan solusi, dan pengembangan web yang sesuai dengan tujuan bisnis.',
+      focus: ['Analisis Kebutuhan', 'Web Development', 'System Development', 'Digital Solutions'],
       waLink: 'https://wa.me/62895365509303?text=Halo%20Nazar,%20saya%20ingin%20konsultasi%20mengenai%20pengembangan%20sistem%20dan%20website%20di%20JAYRYU.'
     },
     'yusuf': {
@@ -269,18 +376,25 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'profil pendiri/Yusuf Ramdany.jpeg',
       bio: 'Digital marketing, client communication, and business development.',
       details: 'STISIP Widyapuri Mandiri. Leads marketing strategy, client consultations, market alignment, and business development to ensure each digital solution achieves tangible commercial impact.',
-      focus: ['Digital Marketing', 'Client Communication', 'Business Development'],
-      waLink: 'https://wa.me/6283163895963?text=Halo%20Yusuf,%20saya%20ingin%20konsultasi%20mengenai%20kebutuhan%20proyek%20dan%20solusi%20digital%20JAYRYU.'
+      focus: ['Digital Marketing', 'Client Communication', 'Business Development']
     },
     'rayhan': {
-      name: 'Rayhan',
-      role: 'Founder & Lead Developer',
+      name: 'Reyhan',
+      role: 'Professional IT',
       website: 'https://rhyru9.xyz/',
       image: '',
-      bio: 'Founder utama JAYRYU, memimpin pengembangan web, aplikasi, dan arsitektur solusi digital.',
-      details: 'Universitas Bina Sarana Informatika. Memimpin standar teknis dan pengembangan produk; berpengalaman dalam web, aplikasi mobile, integrasi API, serta pemecahan masalah sistem.',
-      focus: ['Web Development', 'Mobile Applications', 'API Integration', 'Bug Hunting'],
-      waLink: 'https://wa.me/62895365509303?text=Halo%20Tim%20JAYRYU,%20saya%20ingin%20konsultasi%20tentang%20Web%20%26%20App%20Development.'
+      bio: 'Menangani kebutuhan IT JAYRYU untuk web, aplikasi, bug, dan maintenance.',
+      details: 'Berfokus pada pembuatan dan perawatan website serta aplikasi, perbaikan bug, dan dukungan teknis.',
+      focus: ['Web', 'App', 'Bug Fixing', 'Maintenance']
+    },
+    'raniayu': {
+      name: 'Raniayu',
+      role: 'Marketing & Social Media',
+      image: '',
+      initial: 'RA',
+      bio: 'Mengelola pemasaran dan media sosial JAYRYU.',
+      details: 'Berfokus pada komunikasi brand, pengelolaan media sosial, dan penyampaian informasi layanan JAYRYU.',
+      focus: ['Marketing', 'Social Media', 'Brand Communication']
     }
   };
 
@@ -354,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tmImage = document.getElementById('tmImage');
     tmImage.style.display = member.image ? '' : 'none';
     tmImage.parentElement.classList.toggle('founder-placeholder', !member.image);
-    tmImage.parentElement.setAttribute('data-initial', member.image ? '' : member.name.charAt(0));
+    tmImage.parentElement.setAttribute('data-initial', member.image ? '' : (member.initial || member.name.charAt(0)));
     if (member.image) tmImage.src = member.image;
     tmImage.alt = member.name;
     document.getElementById('tmName').textContent = member.name;
@@ -373,7 +487,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Setup direct WA
     const tmWaBtn = document.getElementById('tmWaBtn');
-    tmWaBtn.href = member.waLink;
+    tmWaBtn.classList.toggle('hidden', !member.waLink);
+    if (member.waLink) tmWaBtn.href = member.waLink;
 
     teamModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -426,6 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Service click shortcut to project showcase with corresponding filter
   window.selectServiceAndFilter = function(filterCategory) {
+    closeServices();
     const projectForService = { website: 'bintang-motor', mobileapp: 'aura-mobile', webapp: 'nexus-erp' };
     const project = projectDatabase[projectForService[filterCategory] || 'bintang-motor'];
     if (project) {
@@ -440,7 +556,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeConsultModal = document.getElementById('closeConsultModal');
   const consultContext = document.getElementById('consultContext');
   const consultNazarLink = document.getElementById('consultNazarLink');
-  const consultYusufLink = document.getElementById('consultYusufLink');
 
   window.openConsultModal = function(subject) {
     const topic = subject || 'Solusi Digital & Web Development JAYRYU';
@@ -452,10 +567,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (consultNazarLink) {
       consultNazarLink.href = `https://wa.me/62895365509303?text=${msg}`;
     }
-    if (consultYusufLink) {
-      consultYusufLink.href = `https://wa.me/6283163895963?text=${msg}`;
-    }
-
     if (consultModal) {
       consultModal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';

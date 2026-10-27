@@ -46,18 +46,20 @@
   <!-- ================= 1. NAVBAR (NO LOGO, CLEAN, THIN, STICKY) ================= -->
   <nav class="floating-nav fixed top-4 left-1/2 -translate-x-1/2 z-40 transition-all">
     <div class="max-w-7xl mx-auto px-3">
-      <div class="flex items-center justify-center h-14">
+      <div class="flex items-center justify-between h-14">
         
-        <!-- Left: Wordmark / Minimal Tagline (Logo is explicitly excluded from navbar per instructions) -->
-        
+        <!-- Brand -->
+        <a href="#home" class="nav-brand" aria-label="JAYRYU — Home">
+          <img src="assets/images/jayryu_logo_dark.png" alt="JAYRYU">
+        </a>
 
-        <!-- Desktop Menu: English Links -->
+        <!-- Main navigation -->
         <div class="hidden md:flex items-center gap-1 text-sm font-semibold text-white">
-          <a href="#home" class="nav-link transition">Home</a>
-          <a href="#services" class="nav-link transition">Services</a>
-          <a href="#about" class="nav-link transition">About</a>
-          <a href="#clients" class="nav-link transition">Clients</a>
-          <a href="#technology" class="nav-link transition">Technology</a>
+          <button type="button" class="nav-link service-nav-link transition" data-service-category="web" aria-expanded="false" aria-controls="services">Web</button>
+          <button type="button" class="nav-link service-nav-link transition" data-service-category="app" aria-expanded="false" aria-controls="services">App</button>
+          <button type="button" class="nav-link service-nav-link transition" data-service-category="bug" aria-expanded="false" aria-controls="services">Bug</button>
+          <button type="button" class="nav-link service-nav-link transition" data-service-category="maintenance" aria-expanded="false" aria-controls="services">Maintenance</button>
+          <button type="button" class="nav-link service-nav-link transition" data-service-category="custom" aria-expanded="false" aria-controls="services">Custom</button>
         </div>
 
         <!-- Primary CTA: Single Consultation Button -->
@@ -73,13 +75,11 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-slate-950/95 rounded-2xl px-5 pt-4 pb-6 space-y-3">
-      <a href="#home" class="block py-2 text-white font-medium hover:text-blue-300">Home</a>
-      <a href="#services" class="block py-2 text-white font-medium hover:text-blue-300">Services</a>
-      <a href="#about" class="block py-2 text-white font-medium hover:text-blue-300">About</a>
-      <a href="#clients" class="block py-2 text-white font-medium hover:text-blue-300">Clients</a>
-      <a href="#technology" class="block py-2 text-white font-medium hover:text-blue-300">Technology</a>
-      <div class="pt-2">
-      </div>
+      <button type="button" class="mobile-service-trigger" data-service-category="web">Web</button>
+      <button type="button" class="mobile-service-trigger" data-service-category="app">App</button>
+      <button type="button" class="mobile-service-trigger" data-service-category="bug">Bug</button>
+      <button type="button" class="mobile-service-trigger" data-service-category="maintenance">Maintenance</button>
+      <button type="button" class="mobile-service-trigger" data-service-category="custom">Custom</button>
     </div>
   </nav>
 
@@ -94,15 +94,16 @@
         
         <!-- LEFT COLUMN: Headline & CTA -->
         <div class="flex w-full max-w-5xl items-center justify-center gap-4 sm:gap-8 text-left">
-          <img src="assets/images/jayryu_logo_white.png" alt="JAYRYU" class="h-16 sm:h-24 lg:h-32 w-auto shrink-0 object-contain">
+          <img src="assets/images/jayryu_logo_dark.png" alt="JAYRYU" class="h-16 sm:h-24 lg:h-32 w-auto shrink-0 object-contain">
           <div class="min-w-0">
             <span class="mb-2 block text-[10px] sm:text-xs font-semibold uppercase tracking-[.22em] text-blue-300">DIGITAL AGENCY</span>
-            <h1 class="hero-heading text-2xl sm:text-4xl lg:text-5xl text-white">
-              Tegnology &amp; Digtal Agenct
+            <h1 class="hero-heading hero-curve-title text-2xl sm:text-4xl lg:text-5xl text-white" aria-label="Digital Solutions">
+              <span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.34em;--letter-delay:0ms">D</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.23em;--letter-delay:45ms">i</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.14em;--letter-delay:90ms">g</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.07em;--letter-delay:135ms">i</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.02em;--letter-delay:180ms">t</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:-.04em;--letter-delay:225ms">a</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:-.08em;--letter-delay:270ms">l</span><span aria-hidden="true" class="hero-curve-space"></span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:-.11em;--letter-delay:315ms">S</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:-.10em;--letter-delay:360ms">o</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:-.08em;--letter-delay:405ms">l</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:-.04em;--letter-delay:450ms">u</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.02em;--letter-delay:495ms">t</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.07em;--letter-delay:540ms">i</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.14em;--letter-delay:585ms">o</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.23em;--letter-delay:630ms">n</span><span aria-hidden="true" class="hero-curve-letter" style="--curve-y:.34em;--letter-delay:675ms">s</span>
             </h1>
             <p class="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
               Bangun solusi digital yang memajukan bisnis Anda.
             </p>
+            <a href="#contact" class="hero-cta">Mulai Proyek <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -141,7 +142,15 @@
   </section>
 
   <!-- ================= 4. SERVICES ================= -->
-  <section id="services" class="py-20 md:py-28 bg-[#f8fafc] border-b border-slate-100">
+  <div id="servicesBackdrop" class="services-backdrop" hidden></div>
+  <section id="services" class="py-20 md:py-28 bg-[#f8fafc] border-b border-slate-100" aria-label="Layanan JAYRYU" aria-hidden="true">
+    <button type="button" id="servicesCloseBtn" class="services-close" aria-label="Tutup layanan">×</button>
+    <div class="service-detail-pane" aria-live="polite">
+      <p class="service-detail-kicker">LAYANAN JAYRYU</p>
+      <h2 id="serviceDetailTitle">Website Development</h2>
+      <p id="serviceDetailDescription">Website profesional yang cepat, responsif, dan dirancang sesuai kebutuhan bisnis Anda.</p>
+      <a href="#contact" class="service-detail-cta">Diskusikan kebutuhan <span aria-hidden="true">↗</span></a>
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
@@ -327,21 +336,15 @@
     </div>
   </div>
 
-  <section id="projectArchive" class="hidden py-20 md:py-28 bg-white border-b border-slate-100">
+  <section id="projectArchive" class="py-20 md:py-28 bg-white border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
-          <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-            Proof of Work
-          </span>
           <h2 class="section-heading text-3xl sm:text-4xl text-slate-900 mt-3">
-            Selected Projects
+            Dipercaya Oleh
           </h2>
-          <p class="text-slate-600 mt-2 text-base font-normal max-w-xl">
-            A selection of digital solutions we've built for businesses and organizations.
-          </p>
         </div>
 
         <!-- Filter Tabs: All, Website, Web App, Mobile App -->
@@ -532,6 +535,13 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="trusted-demo-grid" aria-label="Demo logo klien">
+        <div class="trusted-demo-logo"><img src="assets/images/trusted-logos/selamat-motor.png" alt="Logo Selamat Motor Palabuhanratu" loading="lazy" decoding="async"></div>
+        <div class="trusted-demo-logo"><img src="assets/images/trusted-logos/government.png" alt="Logo instansi pemerintah" loading="lazy" decoding="async"></div>
+        <div class="trusted-demo-logo"><img src="assets/images/trusted-logos/peacoffee.png" alt="Logo Peacoffee" loading="lazy" decoding="async"></div>
+        <div class="trusted-demo-logo"><img src="assets/images/trusted-logos/yamaha.png" alt="Logo Yamaha" loading="lazy" decoding="async"></div>
       </div>
 
     </div>
@@ -738,19 +748,27 @@
               <span class="text-xs font-medium text-slate-500">Focused on measurable commercial results</span>
             </div>
           </div>
+          <div class="mission-card">
+            <span class="text-xs font-semibold uppercase tracking-wider block mb-2">Our Mission</span>
+            <p>Menghadirkan solusi digital yang relevan, mudah digunakan, dan membantu bisnis berkembang.</p>
+          </div>
         </div>
 
       </div>
 
       <div id="team" class="mt-14 border-t border-slate-200/20 pt-10">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <button type="button" onclick="openTeamModal('rayhan')" aria-label="Buka profil Rayhan" class="team-mini-card group">
-            <span class="team-mini-avatar team-mini-founder" aria-hidden="true">R</span>
-            <span class="team-mini-copy"><span class="team-mini-name">Rayhan</span><span class="team-mini-role">Founder &amp; Lead Developer</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
-          </button>
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
           <button type="button" onclick="openTeamModal('nazar')" aria-label="Buka profil Nazar Alfarija" class="team-mini-card group">
             <span class="team-mini-avatar"><img src="profil%20pendiri/Nazar%20Alfarija.jpeg" alt=""></span>
-            <span class="team-mini-copy"><span class="team-mini-name">Nazar Alfarija</span><span class="team-mini-role">Co-Founder &amp; Web Developer</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
+            <span class="team-mini-copy"><span class="team-mini-name">Nazar Alfarija</span><span class="team-mini-role">CCO · Analisis &amp; Web</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
+          </button>
+          <button type="button" onclick="openTeamModal('rayhan')" aria-label="Buka profil Reyhan" class="team-mini-card group">
+            <span class="team-mini-avatar team-mini-founder" aria-hidden="true">R</span>
+            <span class="team-mini-copy"><span class="team-mini-name">Reyhan</span><span class="team-mini-role">Professional IT · Web, App, Bug &amp; Maintenance</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
+          </button>
+          <button type="button" onclick="openTeamModal('raniayu')" aria-label="Buka profil Raniayu" class="team-mini-card group">
+            <span class="team-mini-avatar team-mini-founder" aria-hidden="true">R</span>
+            <span class="team-mini-copy"><span class="team-mini-name">Raniayu</span><span class="team-mini-role">Marketing &amp; Social Media</span><span class="team-mini-action">Buka profil <span aria-hidden="true">→</span></span></span>
           </button>
           <button type="button" onclick="openTeamModal('yusuf')" aria-label="Buka profil Yusuf Ramdany" class="team-mini-card group">
             <span class="team-mini-avatar"><img src="profil%20pendiri/Yusuf%20Ramdany.jpeg" alt=""></span>
@@ -896,20 +914,18 @@
           Let's turn your idea into a digital solution.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <div class="contact-cta-stack pt-4">
           <button onclick="openConsultModal('Final CTA — Start a Project')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base shadow-lg shadow-blue-600/30 transition-all active:scale-95">
             <span>Start a Project</span>
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            <svg class="w-4 h-4 text-white pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m0 0l-7-7m7 7l7-7"></path>
             </svg>
           </button>
 
-          <a href="https://wa.me/62895365509303?text=Halo%20Tim%20JAYRYU,%20saya%20ingin%20konsultasi%20proyek%20baru." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold text-base transition-all">
-            <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-            <span>Chat on WhatsApp</span>
-          </a>
+          <div class="contact-quick-links" aria-label="Kontak langsung">
+            <a href="https://wa.me/62895365509303?text=Halo%20Tim%20JAYRYU,%20saya%20ingin%20konsultasi%20proyek%20baru." target="_blank" class="contact-icon-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.66 15l-1.3 4.7 4.8-1.26A10 10 0 1012 2zm0 18a8 8 0 01-4.08-1.12l-.3-.18-2.85.75.76-2.78-.2-.31A8 8 0 1112 20zm4.4-5.98c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.52.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg></a>
+            <a href="mailto:jayryu.ds@gmail.com" class="contact-icon-link" aria-label="Email JAYRYU"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zm9 7L3 6.8V7l9 6 9-6v-.2L12 12z"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
@@ -947,15 +963,10 @@
           <div class="space-y-2 text-xs text-slate-600">
             <p>
               <a href="https://wa.me/62895365509303" target="_blank" class="hover:text-blue-600 transition flex items-center gap-2">
-                <span>💬 Admin 1 (Nazar): Technical & Systems</span>
+                <span>WhatsApp</span>
               </a>
             </p>
-            <p>
-              <a href="https://wa.me/6283163895963" target="_blank" class="hover:text-blue-600 transition flex items-center gap-2">
-                <span>💬 Admin 2 (Yusuf): Marketing & Business</span>
-              </a>
-            </p>
-            <p class="text-slate-400 pt-1">Email: contact@jayryu.com</p>
+            <p><a href="mailto:jayryu.ds@gmail.com" class="hover:text-blue-600 transition flex items-center gap-2">jayryu.ds@gmail.com</a></p>
           </div>
         </div>
 
@@ -1087,8 +1098,8 @@
       <!-- Modal Header -->
       <div class="bg-blue-600 text-white p-6 flex items-center justify-between">
         <div>
-          <h4 class="font-bold text-lg">WhatsApp Consultation</h4>
-          <p class="text-xs text-blue-100 mt-0.5">Select a JAYRYU specialist:</p>
+          <h4 class="font-bold text-lg">WhatsApp</h4>
+          <p class="text-xs text-blue-100 mt-0.5">Hubungi Nazar untuk konsultasi JAYRYU.</p>
         </div>
         <button id="closeConsultModal" class="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1122,19 +1133,7 @@
         </a>
 
         <!-- Yusuf: Marketing -->
-        <a id="consultYusufLink" href="" target="_blank" class="p-4 rounded-xl border border-slate-200 hover:border-blue-400 bg-white hover:bg-blue-50/30 flex items-center justify-between transition group">
-          <div class="flex items-center gap-3.5">
-            <img src="assets/images/yusuf_realistic.jpg" alt="Yusuf" class="w-11 h-11 rounded-xl object-cover border border-slate-200 shrink-0">
-            <div>
-              <div class="flex items-center gap-1.5">
-                <h5 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition">Yusuf Ramdany</h5>
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              </div>
-              <p class="text-xs text-slate-500">Marketing & Requirements</p>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-blue-600 group-hover:translate-x-0.5 transition">Chat →</span>
-        </a>
+        
 
       </div>
 
@@ -1146,14 +1145,6 @@
   </div>
 
   <!-- ================= 15. SINGLE FLOATING WHATSAPP BUTTON ================= -->
-  <div class="fixed bottom-6 right-6 z-40">
-    <button onclick="openConsultModal('Floating WhatsApp Button')" aria-label="WhatsApp Consultation" class="wa-float-pulse flex items-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm px-4 py-3.5 rounded-full shadow-lg transition-all duration-200 active:scale-95">
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
-      <span>Chat on WhatsApp</span>
-    </button>
-  </div>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

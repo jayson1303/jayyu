@@ -242,3 +242,28 @@
   .cert-card, .cert-card::before, .cert-home-link, .cert-footer a { transition: none; }
   .cert-card:hover { transform: none; }
 }
+
+/* Match the main site's white and light-blue corporate palette. */
+.cert-page { --cert-bg:#fff; --cert-surface:#fff; --cert-border:#e5eaf0; --cert-blue:#4fb3e8; background:#fff !important; color:#374151; }
+.cert-topbar, .cert-footer { border-color:#e5eaf0; }
+.cert-home-link, .cert-footer { color:#657181; }
+.cert-home-link:hover, .cert-footer a:hover { color:#2999d2; }
+.cert-home-link span { color:#4fb3e8; }
+.cert-intro h1, .cert-year-heading h2 { color:#374151; }
+.cert-intro h1 span { color:#4fb3e8; }
+.cert-eyebrow { color:#2999d2; }
+.cert-eyebrow-mark { background:#4fb3e8; box-shadow:0 0 12px rgba(79,179,232,.3); }
+.cert-lede, .cert-organization { color:#657181; }
+.cert-summary { color:#768394; }
+.cert-summary strong { color:#374151; }
+.cert-summary i { background:#4fb3e8; }
+.cert-year-heading span, .cert-index { color:#8793a1; }
+.cert-card { border-color:#e5eaf0; background:#fff; box-shadow:0 8px 26px rgba(55,65,81,.05); }
+.cert-card::before { background:#4fb3e8; }
+.cert-card:hover { border-color:#b9e3f5; box-shadow:0 16px 32px rgba(55,65,81,.09); }
+.cert-category { border-color:#d4effb; background:#eaf7fd; color:#278fbe; }
+.cert-card h3 { color:#374151; }
+.cert-description { color:#657181; }
+.cert-card-foot { border-color:#e8edf2; color:#768394; }
+.cert-card-foot time { color:#2999d2; }
+.cert-footer a { color:#596575; }
