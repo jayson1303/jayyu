@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Array.from(label).forEach((character, index) => {
         const letter = document.createElement('span');
         letter.className = character === ' ' ? 'scroll-heading-space' : 'scroll-heading-letter';
-        letter.textContent = character === ' ' ? '\u00a0' : character;
+        letter.textContent = character;
         letter.style.setProperty('--letter-delay', `${index * (window.innerWidth < 768 ? 16 : 24)}ms`);
         letter.setAttribute('aria-hidden', 'true');
         fragment.appendChild(letter);
