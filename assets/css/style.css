@@ -915,3 +915,57 @@ body { --page-gutter:clamp(22px,5.5vw,92px); }
   #clients .client-logo.logo-apple, #clients .client-logo.logo-blackberry { min-width:82px; }
   #contact h2 { font-size:clamp(2.35rem,10vw,2.8rem); }
 }
+
+
+/* ================= LANGUAGE SWITCHER (ID | EN) ================= */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 5px;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+.lang-switcher:hover {
+  border-color: #cbd5e1;
+  background: #eef2f6;
+}
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+.lang-btn:hover {
+  color: #0f172a;
+}
+.lang-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.35);
+}
+.lang-divider {
+  color: #cbd5e1;
+  font-size: 0.7rem;
+  font-weight: 400;
+  user-select: none;
+  pointer-events: none;
+  margin: 0 1px;
+}

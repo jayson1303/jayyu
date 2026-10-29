@@ -5,26 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Sertifikasi dan pengakuan keamanan siber JAYRYU dari organisasi pemerintah, teknologi, dan program bug bounty.">
-  <title>Certifications &amp; Recognition — JAYRYU</title>
+  <title>Sertifikasi &amp; Pengakuan — JAYRYU</title>
+  <script>
+    (function(){
+      try {
+        var lang = localStorage.getItem('jayryu_lang');
+        if (lang === 'en' || lang === 'id') {
+          document.documentElement.lang = lang;
+        }
+      } catch(e){}
+    })();
+  </script>
   <link rel="icon" type="image/png" href="../../assets/images/logo.png">
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../../assets/css/certifications.css">
 </head>
 <body class="cert-page">
   <header class="cert-topbar">
-    <a class="cert-brand" href="../../index.html" aria-label="JAYRYU — kembali ke halaman utama">
+    <a class="cert-brand" href="../../index.html" aria-label="JAYRYU — kembali ke halaman utama" data-i18n-aria-label="nav_brand_aria">
       <img src="../../assets/images/jayryu_logo_dark.png" alt="JAYRYU">
     </a>
-    <a class="cert-home-link" href="../../index.html"><span aria-hidden="true">←</span> Kembali ke JAYRYU</a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-switcher" role="group" aria-label="Pilih Bahasa / Language">
+        <button type="button" class="lang-btn active" data-lang="id" aria-label="Bahasa Indonesia">ID</button>
+        <span class="lang-divider" aria-hidden="true">|</span>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+      <a class="cert-home-link" href="../../index.html"><span aria-hidden="true">←</span> <span data-i18n="cert_back_link">Kembali ke JAYRYU</span></a>
+    </div>
   </header>
 
   <main class="cert-main">
     <section class="cert-intro" aria-labelledby="page-title">
-      <p class="cert-eyebrow"><span class="cert-eyebrow-mark" aria-hidden="true"></span> JAYRYU · CYBERSECURITY</p>
-      <h1 id="page-title">Certifications <span>&amp; Recognition</span></h1>
-      <p class="cert-lede">Pengakuan, sertifikasi, dan apresiasi atas kontribusi keamanan siber JAYRYU di berbagai organisasi.</p>
+      <p class="cert-eyebrow"><span class="cert-eyebrow-mark" aria-hidden="true"></span> <span data-i18n="cert_eyebrow">JAYRYU · KEAMANAN SIBER</span></p>
+      <h1 id="page-title"><span data-i18n="cert_heading">Sertifikasi &amp; Pengakuan</span></h1>
+      <p class="cert-lede" data-i18n="cert_lede">Pengakuan, sertifikasi, dan apresiasi atas kontribusi keamanan siber JAYRYU di berbagai organisasi.</p>
       <div class="cert-summary" aria-label="11 pengakuan dari tiga tahun">
-        <span><strong>11</strong> recognitions</span><i aria-hidden="true"></i><span><strong>3</strong> years</span>
+        <span><strong>11</strong> <span data-i18n="cert_summary_recognitions">pengakuan</span></span><i aria-hidden="true"></i><span><strong>3</strong> <span data-i18n="cert_summary_years">tahun</span></span>
       </div>
     </section>
 
@@ -32,49 +49,49 @@
       <section class="cert-year" aria-labelledby="year-2026">
         <header class="cert-year-heading">
           <h2 id="year-2026">2026</h2>
-          <span>06 recognitions</span>
+          <span data-i18n="cert_count_2026">06 pengakuan</span>
         </header>
         <div class="cert-grid">
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Hall of Fame</span><span class="cert-index">01</span></div>
             <p class="cert-organization">Belgium Government</p>
             <h3>Hall of Fame</h3>
-            <p class="cert-description">Pengakuan atas kontribusi keamanan yang tercatat dalam Hall of Fame pemerintah Belgia.</p>
+            <p class="cert-description" data-i18n="cert_desc_belgium">Pengakuan atas kontribusi keamanan yang tercatat dalam Hall of Fame pemerintah Belgia.</p>
             <div class="cert-card-foot"><span>Recognition</span><time datetime="2026">2026</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Hall of Fame</span><span class="cert-index">02</span></div>
             <p class="cert-organization">BlackBerry</p>
             <h3>Hall of Fame</h3>
-            <p class="cert-description">Apresiasi dari BlackBerry atas kontribusi pada keamanan produk dan ekosistemnya.</p>
+            <p class="cert-description" data-i18n="cert_desc_blackberry">Apresiasi dari BlackBerry atas kontribusi pada keamanan produk dan ekosistemnya.</p>
             <div class="cert-card-foot"><span>Recognition</span><time datetime="2026">2026</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Security Disclosure</span><span class="cert-index">03</span></div>
             <p class="cert-organization">Apple WebKit</p>
             <h3>CVE-2026-43735</h3>
-            <p class="cert-description">Pengakuan untuk pelaporan kerentanan WebKit dengan identitas CVE-2026-43735.</p>
+            <p class="cert-description" data-i18n="cert_desc_apple">Pengakuan untuk pelaporan kerentanan WebKit dengan identitas CVE-2026-43735.</p>
             <div class="cert-card-foot"><span>Vulnerability</span><time datetime="2026">2026</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Hall of Fame</span><span class="cert-index">04</span></div>
             <p class="cert-organization">Ferrari</p>
             <h3>Hall of Fame</h3>
-            <p class="cert-description">Pengakuan atas kontribusi keamanan yang tercatat di Hall of Fame Ferrari.</p>
+            <p class="cert-description" data-i18n="cert_desc_ferrari">Pengakuan atas kontribusi keamanan yang tercatat di Hall of Fame Ferrari.</p>
             <div class="cert-card-foot"><span>Recognition</span><time datetime="2026">2026</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Security Disclosure</span><span class="cert-index">05</span></div>
             <p class="cert-organization">Institut Teknologi Bandung</p>
             <h3>Security Disclosure</h3>
-            <p class="cert-description">Pengakuan dari ITB atas kontribusi dalam pengungkapan isu keamanan.</p>
+            <p class="cert-description" data-i18n="cert_desc_itb">Pengakuan dari ITB atas kontribusi dalam pengungkapan isu keamanan.</p>
             <div class="cert-card-foot"><span>Disclosure</span><time datetime="2026">2026</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Letter of Appreciation</span><span class="cert-index">06</span></div>
             <p class="cert-organization">NASA</p>
             <h3>Letter of Appreciation</h3>
-            <p class="cert-description">Surat apresiasi NASA atas kontribusi yang diberikan kepada organisasi.</p>
+            <p class="cert-description" data-i18n="cert_desc_nasa">Surat apresiasi NASA atas kontribusi yang diberikan kepada organisasi.</p>
             <div class="cert-card-foot"><span>Appreciation</span><time datetime="2026">2026</time></div>
           </article>
         </div>
@@ -83,28 +100,28 @@
       <section class="cert-year" aria-labelledby="year-2025">
         <header class="cert-year-heading">
           <h2 id="year-2025">2025</h2>
-          <span>03 recognitions</span>
+          <span data-i18n="cert_count_2025">03 pengakuan</span>
         </header>
         <div class="cert-grid">
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Security Assessment</span><span class="cert-index">01</span></div>
             <p class="cert-organization">Provinsi Bali</p>
             <h3>Security Assessment</h3>
-            <p class="cert-description">Apresiasi atas kontribusi pada kegiatan security assessment Provinsi Bali.</p>
+            <p class="cert-description" data-i18n="cert_desc_bali">Apresiasi atas kontribusi pada kegiatan security assessment Provinsi Bali.</p>
             <div class="cert-card-foot"><span>Public Sector</span><time datetime="2025">2025</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Security Assessment</span><span class="cert-index">02</span></div>
             <p class="cert-organization">Pemkot Bekasi</p>
             <h3>Security Assessment</h3>
-            <p class="cert-description">Apresiasi atas kontribusi pada kegiatan security assessment Pemkot Bekasi.</p>
+            <p class="cert-description" data-i18n="cert_desc_bekasi">Apresiasi atas kontribusi pada kegiatan security assessment Pemkot Bekasi.</p>
             <div class="cert-card-foot"><span>Public Sector</span><time datetime="2025">2025</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Security Assessment</span><span class="cert-index">03</span></div>
             <p class="cert-organization">Provinsi Daerah Istimewa Yogyakarta</p>
             <h3>Security Assessment</h3>
-            <p class="cert-description">Apresiasi atas kontribusi pada kegiatan security assessment Provinsi DIY.</p>
+            <p class="cert-description" data-i18n="cert_desc_diy">Apresiasi atas kontribusi pada kegiatan security assessment Provinsi DIY.</p>
             <div class="cert-card-foot"><span>Public Sector</span><time datetime="2025">2025</time></div>
           </article>
         </div>
@@ -113,21 +130,21 @@
       <section class="cert-year" aria-labelledby="year-2023">
         <header class="cert-year-heading">
           <h2 id="year-2023">2023</h2>
-          <span>02 certifications</span>
+          <span data-i18n="cert_count_2023">02 sertifikasi</span>
         </header>
         <div class="cert-grid">
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Bug Bounty</span><span class="cert-index">01</span></div>
             <p class="cert-organization">HackerOne</p>
             <h3>Bug Bounty Hunter Certification</h3>
-            <p class="cert-description">Sertifikasi bug bounty hunter dari HackerOne.</p>
+            <p class="cert-description" data-i18n="cert_desc_hackerone">Sertifikasi bug bounty hunter dari HackerOne.</p>
             <div class="cert-card-foot"><span>Certification</span><time datetime="2023">2023</time></div>
           </article>
           <article class="cert-card">
             <div class="cert-card-top"><span class="cert-category">Bug Bounty</span><span class="cert-index">02</span></div>
             <p class="cert-organization">YesWeHack</p>
             <h3>Bug Bounty Hunter Certification</h3>
-            <p class="cert-description">Sertifikasi bug bounty hunter dari YesWeHack.</p>
+            <p class="cert-description" data-i18n="cert_desc_yeswehack">Sertifikasi bug bounty hunter dari YesWeHack.</p>
             <div class="cert-card-foot"><span>Certification</span><time datetime="2023">2023</time></div>
           </article>
         </div>
@@ -139,5 +156,50 @@
     <span>© 2026 JAYRYU</span>
     <a href="../../index.html">jayryu · Digital &amp; Security</a>
   </footer>
+
+  <script src="../../assets/js/translations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let currentLang = (window.JAYRYU_I18N && window.JAYRYU_I18N.getSavedLang()) || 'id';
+
+      function applyCertLanguage(lang) {
+        if (!window.JAYRYU_I18N) return;
+        const t = window.JAYRYU_I18N.translations[lang];
+        if (!t) return;
+
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.title = t.cert_page_title;
+
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', t.cert_page_desc);
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (t[key] !== undefined) el.textContent = t[key];
+        });
+
+        document.querySelectorAll('.lang-btn[data-lang]').forEach(btn => {
+          const match = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('active', match);
+          btn.setAttribute('aria-pressed', String(match));
+        });
+      }
+
+      document.querySelectorAll('.lang-btn[data-lang]').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetLang = btn.getAttribute('data-lang');
+          if (targetLang && targetLang !== currentLang) {
+            currentLang = targetLang;
+            if (window.JAYRYU_I18N) window.JAYRYU_I18N.setSavedLang(targetLang);
+            applyCertLanguage(currentLang);
+          }
+        });
+      });
+
+      applyCertLanguage(currentLang);
+    });
+  </script>
 </body>
 </html>

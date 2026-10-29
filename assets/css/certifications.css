@@ -267,3 +267,24 @@
 .cert-card-foot { border-color:#e8edf2; color:#768394; }
 .cert-card-foot time { color:#2999d2; }
 .cert-footer a { color:#596575; }
+
+
+/* Language Switcher Dark Theme for Certifications */
+.cert-page .lang-switcher {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.cert-page .lang-btn {
+  color: #94a3b8;
+}
+.cert-page .lang-btn:hover {
+  color: #ffffff;
+}
+.cert-page .lang-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.4);
+}
+.cert-page .lang-divider {
+  color: rgba(255, 255, 255, 0.25);
+}
